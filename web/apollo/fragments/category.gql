@@ -1,0 +1,7 @@
+fragment category on Category {
+	id
+	name
+	description
+	insertedAt
+  	updatedAt
+}

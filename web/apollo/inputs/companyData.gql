@@ -1,0 +1,6 @@
+input CompanyData {
+  name: String!
+  address: String
+  email: String!
+  phone: String!
+}

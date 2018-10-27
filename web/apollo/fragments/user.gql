@@ -1,0 +1,7 @@
+fragment user on User {
+  id
+  email
+  is_admin
+  inserted_at
+  updated_at
+}

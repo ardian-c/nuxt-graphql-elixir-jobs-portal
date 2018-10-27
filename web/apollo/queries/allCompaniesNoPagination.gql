@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/companyPreview.gql"
+query allCompaniesNoPagination {
+  allCompaniesNoPagination {
+    ...companyPreview
+  }
+}

@@ -1,0 +1,13 @@
+fragment company on Company {
+  id
+  name
+  address
+  email
+  phone
+  logo {
+    fileName
+    updatedAt
+  }
+  insertedAt
+  updatedAt
+}

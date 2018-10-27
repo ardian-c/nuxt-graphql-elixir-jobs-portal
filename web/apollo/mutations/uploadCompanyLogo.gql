@@ -1,0 +1,15 @@
+mutation uploadCompanyLogo($logo: Upload!, $companyId: ID!) {
+  uploadCompanyLogo(logo: $logo, companyId: $companyId) {
+    id
+    name
+    address
+    email
+    phone
+    logo {
+        fileName,
+        updatedAt
+    }
+    insertedAt
+    updatedAt
+  }
+}

@@ -1,0 +1,17 @@
+#import "~/apollo/fragments/company.gql"
+#import "~/apollo/fragments/category.gql"
+fragment jobApplication on JobApplication {
+	id
+	title
+	content
+	slug
+	address
+	status
+	priority
+	source
+  ends_at
+	published_at
+	published_timezone
+	# ...company
+	# ...category
+}

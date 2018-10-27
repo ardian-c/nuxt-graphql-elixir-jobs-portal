@@ -1,0 +1,7 @@
+fragment companyPreview on Company {
+  id
+  name
+  email
+  address
+  insertedAt
+}

@@ -1,0 +1,7 @@
+#import "~/apollo/fragments/category.gql"
+query allCategories($offset: Int, $keyword: String) {
+  countCategories
+  allCategories(offset: $offset, keyword: $keyword) {
+    ...category
+  }
+}

@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/company.gql"
+query singleCompany($id: ID!) {
+  singleCompany(id: $id) {
+    ...company
+  }
+}

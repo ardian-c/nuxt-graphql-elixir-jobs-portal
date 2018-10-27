@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/jobApplication.gql"
+mutation newJobApplication($input: JobApplicationData!, $documents: [Upload]) {
+	newJobApplication(input: $input, documents: $documents) {
+		...jobApplication
+	}
+}

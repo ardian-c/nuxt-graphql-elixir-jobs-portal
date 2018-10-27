@@ -1,0 +1,12 @@
+mutation register($input: UserRegister!) {
+  register(input: $input) {
+    token
+    user {
+      id
+      email
+      is_admin
+      inserted_at
+      updated_at
+    }
+  }
+}

@@ -1,0 +1,7 @@
+#import "~/apollo/fragments/companyPreview.gql"
+query allCompanies($offset: Int, $keyword: String) {
+  countCompanies
+  allCompanies(offset: $offset, keyword: $keyword) {
+    ...companyPreview
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "author": "ardian <ardianck@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc2",
+    "@nuxtjs/auth": "^4.5.1",
+    "@nuxtjs/axios": "^5.3.1",
+    "ant-design-vue": "^1.1.2",
+    "apollo-absinthe-upload-link": "^1.2.2",
+    "cookieparser": "^0.1.0",
+    "graphql-tag": "^2.9.2",
+    "intersection-observer": "^0.5.0",
+    "js-cookie": "^2.2.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.1.0",
+    "nuxt": "^1.0.0",
+    "reqwest": "^2.0.5",
+    "style-loader": "^0.23.0",
+    "vue-infinite-scroll": "^2.0.2",
+    "vue-observe-visibility": "^0.4.1",
+    "vue-quill-editor": "^3.0.6",
+    "vue-virtual-scroller": "^0.8.1",
+    "xhr2": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.0.0",
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0"
+  }
+}

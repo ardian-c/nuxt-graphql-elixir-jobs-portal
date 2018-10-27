@@ -1,0 +1,15 @@
+mutation newCompany($input: CompanyData!) {
+  newCompany(input: $input) {
+    id
+    name
+    address
+    email
+    phone
+    logo {
+      file_name
+      updatedAt
+    }
+    insertedAt
+    updatedAt
+  }
+}

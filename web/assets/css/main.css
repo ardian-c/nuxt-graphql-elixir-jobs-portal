@@ -1,0 +1,45 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.login-form, .forgot-password-form {
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  margin-top: 10vh;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.register-form {
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  margin-top: 10vh;
+}
+
+.register-form-button {
+  width: 100%;
+}

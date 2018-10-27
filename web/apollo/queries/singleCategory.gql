@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/category.gql"
+query singleCategory($id: ID!) {
+  singleCategory(id: $id) {
+    ...category
+  }
+}

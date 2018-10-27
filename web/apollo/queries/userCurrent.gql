@@ -1,0 +1,9 @@
+query userCurrent {
+  userCurrent {
+    id
+    email
+    is_admin
+    inserted_at
+    updated_at
+  }
+}

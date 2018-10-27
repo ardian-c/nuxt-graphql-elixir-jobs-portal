@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/category.gql"
+query allCategoriesNoPagination {
+  allCategoriesNoPagination {
+    ...category
+  }
+}

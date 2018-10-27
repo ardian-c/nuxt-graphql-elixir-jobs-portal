@@ -1,0 +1,4 @@
+input CategoryData {
+  name: String!
+  description: String
+}
