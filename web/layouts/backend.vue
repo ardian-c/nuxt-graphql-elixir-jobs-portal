@@ -5,11 +5,12 @@
       v-model="collapsed"
     >
       <div class="logo"></div>
-      <a-menu theme="dark" :defaultSelectedKeys="['1']" mode="inline">
+      <a-menu theme="dark" :selectedKeys="selectedRoute" mode="inline">
         <a-menu-item key="1">
           <a-icon type="pie-chart" />
           <span>Dashboard</span>
         </a-menu-item>
+
         <a-menu-item key="2">
           <nuxt-link to="/backend/admin/job-applications"><a-icon type="desktop" />
           <span>Job Applications</span>
@@ -68,7 +69,48 @@ export default {
 
   data(){
     return {
+      selectedRoute: [],
       collapsed: false,
+    }
+  },
+
+  watch: {
+    $route () {
+      switch(this.$route.path) {
+        case '/backend/admin/job-applications':
+          this.selectedRoute = ['2'];
+          break;
+
+        case '/backend/admin/categories':
+          this.selectedRoute = ['3'];
+          break;
+
+        case '/backend/admin/companies':
+          this.selectedRoute = ['4'];
+          break;
+
+        default:
+            this.selectedRoute = ['1'];
+      }
+    }
+  },
+
+  mounted() {
+    switch($nuxt.$route.path) {
+      case '/backend/admin/job-applications':
+        this.selectedRoute = ['2'];
+        break;
+
+      case '/backend/admin/categories':
+        this.selectedRoute = ['3'];
+        break;
+
+      case '/backend/admin/companies':
+        this.selectedRoute = ['4'];
+        break;
+
+      default:
+          this.selectedRoute = ['1'];
     }
   },
 

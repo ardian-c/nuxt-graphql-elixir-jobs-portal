@@ -47,6 +47,20 @@ defmodule ApiWeb.Resolvers.Categories do
     end
   end
 
+  @desc "Category delete"
+  def delete_category(_, %{ category_id: category_id}, _) do
+    category = Category
+              |> Repo.get!(category_id)
+
+    if category |> Categories.delete_category() do
+      res = %{code: 200, message: 'Category deleted successfully!'}
+      {:ok, res }
+    else
+      res = %{code: 401, message: 'Something went wrong!'}
+      {:error, res }
+    end
+  end
+
   def data() do
     Dataloader.Ecto.new(Repo, query: &query/2)
   end

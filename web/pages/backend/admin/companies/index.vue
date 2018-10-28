@@ -67,7 +67,8 @@
 </template>
 
 <script>
-import COMPANIES_QUERY from '~/apollo/queries/allCompanies.gql'
+import COMPANIES_QUERY from '~/apollo/queries/allCompanies.gql';
+import DELETE_COMPANY_MUTATION from '~/apollo/mutations/deleteCompany.gql';
 
 const companies = [];
 
@@ -215,10 +216,31 @@ export default {
       });
     },
 
-    onDelete (key) {
+    async onDelete (key) {
+      const apolloClient = this.$apollo.provider.defaultClient;
       const dataSource = [...this.companies];
-      console.log(key);
-      this.dataSource = dataSource.filter(item => item.key !== key)
+
+      await apolloClient.mutate({
+        mutation: DELETE_COMPANY_MUTATION,
+        variables: {
+          companyId: parseInt(key.id)
+        },
+      }).then(({ data: { deleteCompany } }) => {
+        console.log('deleted: ', deleteCompany);
+        this.$message.success(deleteCompany.message, 3);
+      }).catch((err) => {
+        this.errors = true;
+        this.$message.error('Something went wrong!', 3);
+      });
+
+      // update list of companies
+      dataSource.forEach((company, idx) => {
+        if(company.id === key.id) {
+          dataSource.splice(idx, 1);
+        }
+      });
+
+      this.companies = dataSource;
     },
 
     handleTableChange (pagination, filters, sorter) {

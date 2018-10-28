@@ -122,4 +122,10 @@ defmodule ApiWeb.Schema.DataTypes do
     field :token, :string
     field :user, :user
   end
+
+  @desc "Generic response message"
+  object :generic_response do
+    field :code, :integer
+    field :message, :string
+  end
 end

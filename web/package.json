@@ -16,6 +16,7 @@
     "@nuxtjs/apollo": "^4.0.0-rc2",
     "@nuxtjs/auth": "^4.5.1",
     "@nuxtjs/axios": "^5.3.1",
+    "@vue/cli-shared-utils": "^3.0.5",
     "ant-design-vue": "^1.1.2",
     "apollo-absinthe-upload-link": "^1.2.2",
     "cookieparser": "^0.1.0",
@@ -34,6 +35,7 @@
     "xhr2": "^0.1.4"
   },
   "devDependencies": {
+    "@akryum/vue-cli-plugin-ssr": "^0.3.0",
     "@types/graphql": "^14.0.0",
     "babel-eslint": "^8.2.1",
     "cross-env": "^5.2.0",

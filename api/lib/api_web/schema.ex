@@ -121,6 +121,13 @@ defmodule ApiWeb.Schema do
       resolve &Resolvers.Categories.add_category/3
     end
 
+    @desc "Category delete"
+    field :delete_category, :generic_response do
+      arg :category_id, non_null(:id)
+
+      resolve &Resolvers.Categories.delete_category/3
+    end
+
     # company
     @desc "Company create"
     field :new_company, :company do
@@ -135,6 +142,13 @@ defmodule ApiWeb.Schema do
       arg :company_id, non_null(:id)
 
       resolve &Resolvers.Companies.add_company_logo/3
+    end
+
+    @desc "Company delete"
+    field :delete_company, :generic_response do
+      arg :company_id, non_null(:id)
+
+      resolve &Resolvers.Companies.delete_company/3
     end
 
     # job application

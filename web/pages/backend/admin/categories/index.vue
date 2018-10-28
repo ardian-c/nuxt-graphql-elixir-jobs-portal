@@ -35,7 +35,7 @@
               <a-popconfirm
                 v-if="categories.length"
                 title="Are you sure you want to delete this category?"
-                @confirm="() => onDelete(record.key)">
+                @confirm="() => onDelete(record)">
                 <a href="javascript:;">Delete</a>
               </a-popconfirm>
             </span>
@@ -69,7 +69,8 @@
 
 <script>
 
-import allCategoriesQuery from '~/apollo/queries/allCategories.gql';
+import ALL_CATEGORIES_QUERY from '~/apollo/queries/allCategories.gql';
+import DELETE_CATEGORY_MUTATION from '~/apollo/mutations/deleteCategory.gql';
 
 const categories = [];
 
@@ -88,7 +89,7 @@ export default {
 	apollo: {
 		allCategories: {
       prefetch: true,
-      query:  allCategoriesQuery,
+      query:  ALL_CATEGORIES_QUERY,
       variables: {
         offset: this.offset,
         keyword: ''
@@ -160,7 +161,7 @@ export default {
       const apolloClient = this.$apollo.provider.defaultClient;
 
       const res = await apolloClient.query({
-        query: allCategoriesQuery,
+        query: ALL_CATEGORIES_QUERY,
         variables: {
           offset,
           keyword
@@ -185,7 +186,7 @@ export default {
       const offset = 0;
 
       await apolloClient.query({
-        query: allCategoriesQuery,
+        query: ALL_CATEGORIES_QUERY,
         variables: {
           offset,
           keyword
@@ -207,9 +208,32 @@ export default {
   		this.$router.push({ path: 'categories/create' });
   	},
 
-  	onDelete (key) {
-      const dataSource = [...this.categories]
-      this.dataSource = dataSource.filter(item => item.key !== key)
+  	async onDelete (key) {
+      const apolloClient = this.$apollo.provider.defaultClient;
+      const dataSource = [...this.categories];
+
+      console.log(key);
+
+      await apolloClient.mutate({
+        mutation: DELETE_CATEGORY_MUTATION,
+        variables: {
+          categoryId: parseInt(key.id)
+        },
+      }).then(({ data: { deleteCategory } }) => {
+        this.$message.success(deleteCategory.message, 3);
+      }).catch((err) => {
+        this.errors = true;
+        this.$message.error('Something went wrong!', 3);
+      });
+
+      // update list of companies
+      dataSource.forEach((category, idx) => {
+        if(category.id === key.id) {
+          dataSource.splice(idx, 1);
+        }
+      });
+
+      this.categories = dataSource;
     },
 
     handleTableChange (pagination, filters, sorter) {

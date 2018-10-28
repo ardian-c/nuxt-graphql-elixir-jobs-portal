@@ -54,4 +54,18 @@ defmodule ApiWeb.Resolvers.Companies do
         {:ok, company}
     end
   end
+
+  @desc "Company remove"
+  def delete_company(_, %{ company_id: company_id }, _) do
+    company = Company
+      |> Repo.get!(company_id)
+
+    if company |> Companies.delete_company() do
+      res = %{code: 200, message: 'Company deleted successfully!'}
+      {:ok, res }
+    else
+      res = %{code: 401, message: 'Something went wrong!'}
+      {:error, res }
+    end
+  end
 end
