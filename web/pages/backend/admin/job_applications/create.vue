@@ -46,7 +46,7 @@
                 >
                   <a-input
                     type="text"
-                    placeholder="job application address"
+                    placeholder="job address"
                     v-model="job_application.address"
                     ref="addressInput">
                   </a-input>
@@ -85,7 +85,7 @@
                 >
                   <a-input
                     type="text"
-                    placeholder="job application source"
+                    placeholder="job source"
                     v-model="job_application.source"
                     ref="sourceInput">
                   </a-input>
@@ -149,8 +149,10 @@
                   v-if="companies.length > 0"
                 >
                   <a-select
-                    placeholder='Select owner of job application'
+                    showSearch
+                    placeholder='Select owner of the job application'
                     v-model="job_application.company"
+                    :filterOption="filterCompanyOptions"
                   >
                     <a-select-option v-for="(company, idx) in companies" :key="'company-'+idx" :value='company.id'>{{ company.name }}</a-select-option>
                   </a-select>
@@ -224,10 +226,10 @@ import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createLink } from "apollo-absinthe-upload-link";
 
-import singleCategoryByNameOrDescriptionQuery from '~/apollo/queries/singleCategoryByNameOrDescription.gql';
-import allCompaniesQuery from '~/apollo/queries/allCompaniesNoPagination.gql';
-import allCategoriesQuery from '~/apollo/queries/allCategoriesNoPagination.gql';
-import newJobApplicationMutation from '~/apollo/mutations/newJobApplication.gql';
+import SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY from '~/apollo/queries/singleCategoryByNameOrDescription.gql';
+import ALL_COMPANIES_QUERY from '~/apollo/queries/allCompaniesNoPagination.gql';
+import ALL_CATEGORIES_QUERY from '~/apollo/queries/allCategoriesNoPagination.gql';
+import NEW_JOB_APPLICATION_MUTATION from '~/apollo/mutations/newJobApplication.gql';
 
 const client = new ApolloClient({
   link: createLink({
@@ -351,7 +353,7 @@ export default {
       this.fetching = true;
       const apolloClient = this.$apollo.provider.defaultClient;
       const category = await apolloClient.query({
-        query: singleCategoryByNameOrDescriptionQuery,
+        query: SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY,
         variables: {
           keyword: value
         }
@@ -376,7 +378,7 @@ export default {
     async getCompanies() {
       const apolloClient = this.$apollo.provider.defaultClient;
       const companies = await apolloClient.query({
-        query: allCompaniesQuery,
+        query: ALL_COMPANIES_QUERY,
         variables: {}
       }).then(({ data}) => {
         this.companies = data.allCompaniesNoPagination;
@@ -388,7 +390,7 @@ export default {
     async getCategories() {
       const apolloClient = this.$apollo.provider.defaultClient;
       const categories = await apolloClient.query({
-        query: allCategoriesQuery,
+        query: ALL_CATEGORIES_QUERY,
         variables: {}
       }).then(({data}) => {
         this.job_application.categories = data.allCategoriesNoPagination;
@@ -503,7 +505,7 @@ export default {
         // Object.keys(input).forEach(key => formData.append(key, object[key]));
 
         const res = await client.mutate({
-          mutation: newJobApplicationMutation,
+          mutation: NEW_JOB_APPLICATION_MUTATION,
           variables: {
             input,
             documents: this.documents
@@ -531,8 +533,13 @@ export default {
       this.job_application.content = html
     },
 
+    filterCompanyOptions(input, option) {
+        return option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0
+    },
+
     // helper methods
     sanitizeTitle: function(title) {
+      var random = Math.floor(Date.now() / 1000);
       var slug = "";
       // Change to lower case
       var titleLower = title.toLowerCase();
@@ -554,7 +561,7 @@ export default {
       // Change whitespace to "-"
       slug = slug.replace(/\s+/g, '-');
 
-      return slug;
+      return slug + '-' + random;
     }
   }
 }

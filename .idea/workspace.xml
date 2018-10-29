@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d558bd58-c1b3-4602-999f-7901b6b74d14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/apollo/mutations/deleteCategory.gql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/apollo/mutations/deleteCompany.gql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/lib/api_web/resolvers/categories.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api_web/resolvers/categories.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/lib/api_web/schema.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api_web/schema.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/layouts/backend.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/layouts/backend.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/backend/admin/categories/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/backend/admin/categories/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/backend/admin/companies/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/backend/admin/companies/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,22 +77,22 @@
     <session id="-126590273">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="beam" value="3" />
           <entry key="css" value="5" />
-          <entry key="ex" value="89" />
+          <entry key="ex" value="90" />
           <entry key="exs" value="39" />
           <entry key="gql" value="10" />
           <entry key="js" value="58" />
@@ -120,7 +110,7 @@
           <entry key="CSS" value="5" />
           <entry key="Database Element" value="1" />
           <entry key="Elixir Script" value="39" />
-          <entry key="Elixir file" value="89" />
+          <entry key="Elixir file" value="90" />
           <entry key="JSON" value="9" />
           <entry key="JavaScript" value="58" />
           <entry key="Less" value="5" />
@@ -133,52 +123,52 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="35" />
-          <entry key="ex" value="7031" />
+          <entry key="ex" value="7682" />
           <entry key="exs" value="648" />
           <entry key="gql" value="648" />
           <entry key="js" value="807" />
           <entry key="json" value="2" />
           <entry key="less" value="51" />
           <entry key="txt" value="9" />
-          <entry key="vue" value="12680" />
+          <entry key="vue" value="12787" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="35" />
           <entry key="Elixir Script" value="648" />
-          <entry key="Elixir file" value="7031" />
+          <entry key="Elixir file" value="7682" />
           <entry key="Graql" value="180" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="807" />
           <entry key="Less" value="51" />
           <entry key="PLAIN_TEXT" value="477" />
-          <entry key="Vue.js" value="12680" />
+          <entry key="Vue.js" value="12787" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58752024">
+    <splitter split-orientation="horizontal" split-proportion="0.43195626">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="444" column="24" selection-start-line="444" selection-start-column="24" selection-end-line="444" selection-end-column="24" />
+                <state relative-caret-position="666">
+                  <caret line="565" column="3" lean-forward="true" selection-start-line="565" selection-start-column="3" selection-end-line="565" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#8216#8244#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/create.vue">
+            <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="511">
-                  <caret line="241" column="37" selection-start-line="241" selection-start-column="37" selection-end-line="241" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#3709#3750#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="311">
+                  <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -186,29 +176,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/layouts/backend.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
+                <state relative-caret-position="896">
                   <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/categories/index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="214" column="23" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#3062#3132#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/apollo/mutations/deleteCompany.gql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="96">
-                  <caret line="6" selection-end-line="6" />
                 </state>
               </provider>
             </entry>
@@ -220,26 +189,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema.ex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="232">
+                <state relative-caret-position="2032">
                   <caret line="127" column="51" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="51" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/categories.ex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="70">
-                  <caret line="41" selection-start-line="41" selection-end-line="41" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="358">
-                  <caret line="58" column="20" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -247,17 +198,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
+                <state relative-caret-position="2016">
                   <caret line="126" column="26" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+                <state relative-caret-position="288">
+                  <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -293,6 +244,9 @@
       <find>allCompaniesQuery</find>
       <find>delete</find>
       <find>onDelete</find>
+      <find>newJobApplicationMutation</find>
+      <find>job application address</find>
+      <find>showSearch</find>
     </findStrings>
     <replaceStrings>
       <replace>position</replace>
@@ -302,6 +256,10 @@
       <replace>input</replace>
       <replace>UPLOAD_COMPANY_LOGO_MUTATION</replace>
       <replace>COMPANIES_QUERY</replace>
+      <replace>ALL_COMPANIES_QUERY</replace>
+      <replace>SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY</replace>
+      <replace>ALL_CATEGORIES_QUERY</replace>
+      <replace>NEW_JOB_APPLICATION_MUTATION</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -341,8 +299,6 @@
         <option value="$PROJECT_DIR$/api/lib/api_web/resolvers/accounts.ex" />
         <option value="$PROJECT_DIR$/web/apollo/mutations/register.gql" />
         <option value="$PROJECT_DIR$/web/pages/register.vue" />
-        <option value="$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue" />
-        <option value="$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex" />
         <option value="$PROJECT_DIR$/api/lib/api/job_applications/job_application.ex" />
         <option value="$PROJECT_DIR$/api/priv/repo/migrations/20180915204442_create_documents.exs" />
         <option value="$PROJECT_DIR$/api/lib/api/documents/document.ex" />
@@ -361,6 +317,8 @@
         <option value="$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex" />
         <option value="$PROJECT_DIR$/api/lib/api_web/schema.ex" />
         <option value="$PROJECT_DIR$/web/pages/backend/admin/categories/index.vue" />
+        <option value="$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex" />
+        <option value="$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue" />
       </list>
     </option>
   </component>
@@ -387,10 +345,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="40" />
-    <option name="y" value="66" />
-    <option name="width" value="899" />
-    <option name="height" value="500" />
+    <option name="x" value="32" />
+    <option name="y" value="52" />
+    <option name="width" value="720" />
+    <option name="height" value="400" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -498,20 +456,6 @@
               <item name="npune" type="b2602c69:ProjectViewProjectNode" />
               <item name="npune" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="apollo" type="462c0819:PsiDirectoryNode" />
-              <item name="fragments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npune" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="apollo" type="462c0819:PsiDirectoryNode" />
-              <item name="mutations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npune" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -531,16 +475,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="SearchEverywhereHistoryKey" value="categories.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/categories.ex&#10;categories/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/index.vue&#10;companies/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/see&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;index.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;companies.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;job_applicatio&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;package.json&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;allCompanies.gql&#9;FILE&#9;file://C:/laragon/www/other/npune/web/apollo/queries/allCompanies.gql&#10;companies/inde&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;add_job_application_id_to_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181025233937_add_job_application_id_to_documents_table.exs&#10;create_documents&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915204442_create_documents.exs&#10;job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;add_job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;add_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;data_types.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema/data_types.ex&#10;create.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/create.vue&#10;job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;user_view.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/views/user_view.ex&#10;main.css&#9;FILE&#9;file://C:/laragon/www/other/npune/web/assets/css/main.css&#10;register.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/register.vue&#10;context.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/context.ex&#10;endpoint.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;mix.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;nuxt.con&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;router.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/router.ex&#10;Navbar.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/components/homepage/Navbar.vue&#10;config/dev&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;package.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;dev.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;config.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/config.exs&#10;company.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;compan&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;docum&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;create_users.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915112539_create_users.exs&#10;user.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/accounts/user.ex&#10;user_controller.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/controllers/user_controller.ex&#10;Schema.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema.ex&#10;config/de&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;config/pro&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/prod.secret.exs&#10;config/dev.&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs" />
+    <property name="SearchEverywhereHistoryKey" value="companies&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;categories.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/categories.ex&#10;categories/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/index.vue&#10;companies/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/see&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;index.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;companies.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;job_applicatio&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;package.json&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;allCompanies.gql&#9;FILE&#9;file://C:/laragon/www/other/npune/web/apollo/queries/allCompanies.gql&#10;companies/inde&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;add_job_application_id_to_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181025233937_add_job_application_id_to_documents_table.exs&#10;create_documents&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915204442_create_documents.exs&#10;job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;add_job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;add_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;data_types.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema/data_types.ex&#10;create.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/create.vue&#10;job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;user_view.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/views/user_view.ex&#10;main.css&#9;FILE&#9;file://C:/laragon/www/other/npune/web/assets/css/main.css&#10;register.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/register.vue&#10;context.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/context.ex&#10;endpoint.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;mix.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;nuxt.con&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;router.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/router.ex&#10;Navbar.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/components/homepage/Navbar.vue&#10;config/dev&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;package.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;dev.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;config.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/config.exs&#10;company.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;compan&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;docum&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;create_users.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915112539_create_users.exs&#10;user.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/accounts/user.ex&#10;user_controller.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/controllers/user_controller.ex&#10;Schema.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema.ex&#10;config/de&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;config/pro&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/prod.secret.exs&#10;config/dev.&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540733022784" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540734959501" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -582,24 +527,26 @@
       <workItem from="1537483205165" duration="6725000" />
       <workItem from="1537556341023" duration="10686000" />
       <workItem from="1537614531063" duration="45695000" />
-      <workItem from="1540493667121" duration="38517000" />
+      <workItem from="1540493667121" duration="39583000" />
+      <workItem from="1540735013721" duration="7699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169519000" />
+    <option name="totallyTimeSpent" value="178284000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17181209" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12260128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="GraphQL" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -612,6 +559,8 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.3243626" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32907802" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Flutter Outline" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="1" weight="0.3295302" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24966443" />
@@ -682,9 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#a-button#0;n#a-dropdown#0;n#a-row#0;n#a-col#2;n#a-row#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,13 +741,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema/account_types.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema/account_types.ex" />
     <entry file="file://$PROJECT_DIR$/web/pages/login.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1692">
@@ -865,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="444" column="24" selection-start-line="444" selection-start-column="24" selection-end-line="444" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/priv/repo/migrations/20181025233937_add_job_application_id_to_documents_table.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -914,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/lib/api/companies/companies.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -928,20 +854,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="126" column="26" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/apollo/fragments/generic_response.gql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/apollo/fragments/generic_response.gql" />
     <entry file="file://$PROJECT_DIR$/web/apollo/mutations/login.gql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -949,34 +862,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/create.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="241" column="37" selection-start-line="241" selection-start-column="37" selection-end-line="241" selection-end-column="37" />
-          <folding>
-            <element signature="e#3709#3750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/priv/repo/seeds.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="22" column="99" lean-forward="true" selection-start-line="22" selection-start-column="99" selection-end-line="22" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/layouts/backend.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/apollo/mutations/deleteCompany.gql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -997,20 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="58" column="20" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="127" column="51" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/categories.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -1020,10 +895,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/categories/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="214" column="23" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
+        <state relative-caret-position="210">
+          <caret line="210" column="26" lean-forward="true" selection-start-line="210" selection-start-column="26" selection-end-line="210" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/apollo/mutations/deleteCompany.gql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/create.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="241" column="37" selection-start-line="241" selection-start-column="37" selection-end-line="241" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/layouts/backend.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2032">
+          <caret line="127" column="51" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="126" column="26" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="565" column="3" lean-forward="true" selection-start-line="565" selection-start-column="3" selection-end-line="565" selection-end-column="3" />
           <folding>
-            <element signature="e#3062#3132#0" expanded="true" />
+            <element signature="e#8216#8244#0" expanded="true" />
           </folding>
         </state>
       </provider>
