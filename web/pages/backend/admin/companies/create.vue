@@ -237,7 +237,7 @@ export default {
 
         if(!this.errors) {
           // window.location.reload();
-          this.$router.push({ path: '/backend/admin/companies/' + res.newCompany.id });
+          this.$router.push({ path: '/backend/admin/companies'});
           setTimeout(function() {
             window.location.reload();
           }, 3000);

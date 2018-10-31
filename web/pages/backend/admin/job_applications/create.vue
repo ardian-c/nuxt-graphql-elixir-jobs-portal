@@ -151,7 +151,7 @@
                   <a-select
                     showSearch
                     placeholder='Select owner of the job application'
-                    v-model="job_application.company"
+                    v-model="job_application.company_id"
                     :filterOption="filterCompanyOptions"
                   >
                     <a-select-option v-for="(company, idx) in companies" :key="'company-'+idx" :value='company.id'>{{ company.name }}</a-select-option>
@@ -296,7 +296,7 @@ export default {
         source: '',
         ends_at: '',
         published_at: '',
-        company: '',
+        company_id: '',
         categories: [],
         is_scheduled: false
       },
@@ -496,6 +496,7 @@ export default {
           categories.push(cat.key);
         });
 
+
         input.categories = categories;
 
         console.log('input: ', input);
@@ -511,8 +512,14 @@ export default {
             documents: this.documents
           },
         }).then(({ data }) => {
-          console.log('data: ', data);
           this.$message.success('Job application added successfully!');
+
+          // window.location.reload();
+          this.$router.push({ path: '/backend/admin/job-applications'});
+          setTimeout(function() {
+            window.location.reload();
+          }, 3000);
+
         }).catch((err) => {
           console.log('err: ', err);
         });

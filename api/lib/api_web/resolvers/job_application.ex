@@ -5,17 +5,27 @@ defmodule ApiWeb.Resolvers.JobApplications do
   alias Api.Repo
   alias Api.JobApplications
   alias Api.JobApplications.JobApplication
+  alias Api.JobApplications.JobApplicationCategory
 
-  @desc "Add new job application"
+  alias Api.DocumentUploader
+  alias Api.Documents.Document
+
+  @doc """
+    Add new job application
+  """
   def add_new_job_application(_, %{ input: params, documents: documents }, _) do
-#    slug = params[:slug] <> "-" <> Enum.random(1..1_000000)
-#    Map.put(params, :slug, slug)
-    Logger.info "params: #{inspect(params)}"
     with {:ok, %JobApplication{} = job_application} <- JobApplications.create_job_application(params) do
-      # add relation with company
+      # add relation with company & company
+      for category <- params.categories do
+        Repo.insert!(JobApplicationCategory.changeset(%JobApplicationCategory{}, %{ job_application_id: job_application.id, category_id: category }))
+      end
 
-      # add relation with categories
+      # insert documents related to job application (if any)
+      for document <- documents do
+        {:ok, document_path } = DocumentUploader.store({document, job_application})
 
+        Repo.insert!(Document.changeset(%Document{}, %{file_type: document.content_type, path: document_path, job_application_id: job_application.id}))
+      end
       # add documents
       {:ok, job_application}
     end

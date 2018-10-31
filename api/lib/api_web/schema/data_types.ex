@@ -100,7 +100,7 @@ defmodule ApiWeb.Schema.DataTypes do
     field :source, :string
     field :ends_at, :string
     field :published_at, :string
-    field :company, :string, default_value: ""
+    field :company_id, :string, default_value: ""
     field :categories, list_of(:string)
     field :is_scheduled, :boolean
   end

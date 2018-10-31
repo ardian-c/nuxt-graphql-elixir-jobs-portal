@@ -8,6 +8,8 @@ defmodule Api.Documents.Document do
     field :size, :integer
     field :type, :string
 
+    field :job_application_id, :integer
+
     timestamps()
 
     belongs_to :job_applications, Api.JobApplications.JobApplication
@@ -16,7 +18,7 @@ defmodule Api.Documents.Document do
   @doc false
   def changeset(document, attrs) do
     document
-    |> cast(attrs, [:path, :size, :file_type, :type])
-    |> validate_required([:path, :size, :file_type, :type])
+    |> cast(attrs, [:path, :size, :file_type, :type, :job_application_id ])
+    |> validate_required([:path, :file_type])
   end
 end
