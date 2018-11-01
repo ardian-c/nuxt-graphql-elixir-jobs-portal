@@ -71,6 +71,22 @@ defmodule ApiWeb.Schema.DataTypes do
     field :description, :string
   end
 
+  @desc "Job application preview"
+  object :job_application_preview do
+    field :id, :id
+    field :title, :string
+    field :content, :string
+    field :slug, :string
+    field :address, :string
+    field :status, :integer
+    field :priority, :integer
+    field :source, :string
+    field :ends_at, :string
+    field :published_at, :string
+    field :published_timezone, :string
+    # field :company, :company, resolve: dataloader(Companies)
+  end
+
   # job application
   @desc "Job application"
   object :job_application do

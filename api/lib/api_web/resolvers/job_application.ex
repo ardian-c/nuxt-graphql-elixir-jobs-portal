@@ -11,6 +11,18 @@ defmodule ApiWeb.Resolvers.JobApplications do
   alias Api.Documents.Document
 
   @doc """
+    Get all job applications
+  """
+  def get_all_job_applications(_, %{ keyword: keyword, offset: offset }, _) do
+    job_applications = JobApplication
+        |> JobApplications.search(keyword)
+        |> Repo.paginate(offset)
+        |> Repo.all()
+    {:ok, job_applications}
+  end
+
+
+  @doc """
     Add new job application
   """
   def add_new_job_application(_, %{ input: params, documents: documents }, _) do

@@ -1,0 +1,6 @@
+mutation deleteJobApplication($jobApplicationId: ID!) {
+  deleteJobApplication(jobApplicationId: $jobApplicationId) {
+    code
+    message
+  }
+}

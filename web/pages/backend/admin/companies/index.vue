@@ -195,8 +195,6 @@ export default {
       const apolloClient = this.$apollo.provider.defaultClient;
       const offset = 0;
 
-      console.log(keyword);
-
       await apolloClient.query({
         query: COMPANIES_QUERY,
         variables: {

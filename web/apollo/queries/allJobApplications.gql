@@ -1,0 +1,8 @@
+#import "~/apollo/fragments/jobApplicationPreview.gql"
+query allJobApplications($offset: Int, $keyword: String) {
+  countJobApplications
+  allJobApplications(offset: $offset, keyword: $keyword) {
+    id
+    title
+  }
+}

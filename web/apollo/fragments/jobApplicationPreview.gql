@@ -1,0 +1,14 @@
+#import "~/apollo/fragments/jobApplication.gql"
+fragment jobApplicationPreview on JobApplication {
+	id
+	title
+	content
+	slug
+	address
+	status
+	priority
+	source
+  endsAt
+	publishedAt
+	publishedTimezone
+}

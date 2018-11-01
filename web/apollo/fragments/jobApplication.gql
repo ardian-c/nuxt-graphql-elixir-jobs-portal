@@ -9,9 +9,9 @@ fragment jobApplication on JobApplication {
 	status
 	priority
 	source
-  ends_at
-	published_at
-	published_timezone
+  endsAt
+	publishedAt
+	publishedTimezone
 	# ...company
 	# ...category
 }

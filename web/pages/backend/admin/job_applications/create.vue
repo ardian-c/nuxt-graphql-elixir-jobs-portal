@@ -407,12 +407,11 @@ export default {
     },
 
     handleTimepickerChange(time, timeString) {
-      console.log(this.job_application.published_at);
-      console.log('time string: ', timeString);
+      // console.log(this.job_application.published_at);
+      // console.log('time string: ', timeString);
     },
 
     handleCategoriesSelectChange(value) {
-        console.log(value);
         let tmp = {};
         tmp.id = value.key;
         tmp.name = value.label;
@@ -498,10 +497,6 @@ export default {
 
 
         input.categories = categories;
-
-        console.log('input: ', input);
-        console.log('categories: ', categories);
-        console.log('documents: ', this.documents);
 
         // Object.keys(input).forEach(key => formData.append(key, object[key]));
 

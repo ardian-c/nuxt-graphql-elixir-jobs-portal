@@ -38,6 +38,17 @@ defmodule Api.JobApplications do
   def get_job_application!(id), do: Repo.get!(JobApplication, id)
 
   @doc """
+    Search for job applications by title
+  """
+  def search(query, keyword) do
+    from(
+      r in query,
+      where: ilike(r.title, ^"%#{keyword}%"),
+      order_by: [desc: :inserted_at]
+    )
+  end
+
+  @doc """
   Creates a job_application.
 
   ## Examples
@@ -100,5 +111,13 @@ defmodule Api.JobApplications do
   """
   def change_job_application(%JobApplication{} = job_application) do
     JobApplication.changeset(job_application, %{})
+  end
+
+  def data() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  def query(queryable, _) do
+    queryable
   end
 end

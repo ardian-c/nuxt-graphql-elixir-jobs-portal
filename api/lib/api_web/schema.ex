@@ -91,6 +91,26 @@ defmodule ApiWeb.Schema do
 
       resolve &Resolvers.Categories.get_by_id/3
     end
+
+    # job applications
+    @desc "Get all job applications"
+    field :all_job_applications, list_of(:job_application_preview) do
+      arg :offset, :integer, default_value: 0
+      arg :keyword, :string, default_value: nil
+
+      resolve &Resolvers.JobApplications.get_all_job_applications/3
+    end
+
+    @desc "Count of all job applications"
+    field :count_job_applications, :integer do
+      resolve(fn args, _ ->
+        count_job_applications =
+          Api.JobApplications.JobApplication
+          |> Repo.count()
+
+        {:ok, count_job_applications}
+      end)
+    end
   end
 
   #
@@ -152,7 +172,7 @@ defmodule ApiWeb.Schema do
     end
 
     # job application
-    @desc "New Job Application"
+    @desc "New job application"
     field :new_job_application, :job_application do
       arg :input, non_null(:job_application_data)
       arg :documents, list_of(:upload)
