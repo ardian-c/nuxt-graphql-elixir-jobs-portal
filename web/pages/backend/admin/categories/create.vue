@@ -57,7 +57,7 @@
 </template>
 
 <script>
-
+import ALL_CATEGORIES_QUERY from '~/apollo/queries/allCategories.gql';
 import newCategoryMutation from '~/apollo/mutations/newCategory.gql';
 
 export default {
@@ -134,6 +134,19 @@ export default {
         });
 
         if(!this.errors) {
+          const res = await this.$apollo.query({
+            query: ALL_CATEGORIES_QUERY,
+            variables: {
+              offset: 0,
+              keyword: ''
+            }
+          }).then(({data}) => {
+            return data
+          }).catch((err) => {
+            console.log("err: ", err);
+          });
+
+          this.$bus.$emit('category-added', res);
           this.$router.push({ path: '/backend/admin/categories' });
         }
       }

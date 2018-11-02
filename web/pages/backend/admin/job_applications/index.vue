@@ -81,7 +81,6 @@ export default {
         keyword: ''
       },
       result({ data }) {
-        console.log('data: ', data);
         const pagination = { ...this.pagination };
         this.loading = true;
         this.job_applications = data.allJobApplications;
@@ -91,6 +90,15 @@ export default {
         this.loading = false;
       }
     }
+  },
+
+  created () {
+    this.$bus.$on('job-application-added', (data) => {
+      this.job_applications = data.jobApplications;
+      const pagination = { ...this.pagination };
+      pagination.total = data.countJobApplications;
+      this.pagination = pagination;
+    });
   },
 
   data() {
@@ -189,6 +197,8 @@ export default {
 
     async onDelete(key) {
       const dataSource = [...this.job_applications];
+
+      const apolloClient = this.$apollo.provider.defaultClient;
 
       await apolloClient.mutate({
         mutation: DELETE_JOB_APPLICATION_MUTATION,

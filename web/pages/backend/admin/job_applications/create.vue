@@ -227,6 +227,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { createLink } from "apollo-absinthe-upload-link";
 
 import SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY from '~/apollo/queries/singleCategoryByNameOrDescription.gql';
+import ALL_JOB_APPLICATIONS_QUERY from '~/apollo/queries/allJobApplications.gql';
 import ALL_COMPANIES_QUERY from '~/apollo/queries/allCompaniesNoPagination.gql';
 import ALL_CATEGORIES_QUERY from '~/apollo/queries/allCategoriesNoPagination.gql';
 import NEW_JOB_APPLICATION_MUTATION from '~/apollo/mutations/newJobApplication.gql';
@@ -495,12 +496,9 @@ export default {
           categories.push(cat.key);
         });
 
-
         input.categories = categories;
 
-        // Object.keys(input).forEach(key => formData.append(key, object[key]));
-
-        const res = await client.mutate({
+        const new_job_application = await client.mutate({
           mutation: NEW_JOB_APPLICATION_MUTATION,
           variables: {
             input,
@@ -508,17 +506,27 @@ export default {
           },
         }).then(({ data }) => {
           this.$message.success('Job application added successfully!');
-
-          // window.location.reload();
           this.$router.push({ path: '/backend/admin/job-applications'});
-          setTimeout(function() {
-            window.location.reload();
-          }, 3000);
-
+          return data;
         }).catch((err) => {
           console.log('err: ', err);
         });
       }
+
+
+      const res = await client.query({
+        query: ALL_JOB_APPLICATIONS_QUERY,
+        variables: {
+          offset: 0,
+          keyword: ''
+        }
+      }).then(({data}) => {
+        return data
+      }).catch((err) => {
+        console.log("err: ", err);
+      });
+
+      this.$bus.$emit('job-application-added', res);
     },
 
     onEditorBlur(editor) {

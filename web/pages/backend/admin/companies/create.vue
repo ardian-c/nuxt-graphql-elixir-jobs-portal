@@ -104,7 +104,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 
 import { createLink } from "apollo-absinthe-upload-link";
 
-import COMPANIES_QUERY from '~/apollo/queries/allCompanies.gql'
+import ALL_COMPANIES_QUERY from '~/apollo/queries/allCompanies.gql'
 import NEW_COMPANY_MUTATION from '~/apollo/mutations/newCompany.gql';
 import UPLOAD_COMPANY_LOGO_MUTATION from '~/apollo/mutations/uploadCompanyLogo.gql';
 
@@ -194,7 +194,7 @@ export default {
           },
           // update query with new results
           refetchQueries: [{
-            query: COMPANIES_QUERY,
+            query: ALL_COMPANIES_QUERY,
             variables: {
               offset: this.offset,
               keyword: this.keyword
@@ -216,16 +216,6 @@ export default {
             variables: {
               logo: this.logo.originFileObj,
               companyId: res.newCompany.id
-            },
-            update: (store, { data: { uploadCompanyLogo }}) => {
-              try {
-                const data = store.readQuery({ query: COMPANIES_QUERY, variables: { offset: this.offset, keyword: this.keyword } });
-                console.log('data 22: ', data);
-                data.allCompanies.push(uploadCompanyLogo);
-                store.writeQuery({ query: COMPANIES_QUERY, data });
-              } catch(err) {
-                console.log(err);
-              }
             }
           }).then(({ data }) => {
             console.log("data: ", data);
@@ -236,11 +226,20 @@ export default {
         }
 
         if(!this.errors) {
-          // window.location.reload();
+          const res = await client.query({
+            query: ALL_COMPANIES_QUERY,
+            variables: {
+              offset: 0,
+              keyword: ''
+            }
+          }).then(({data}) => {
+            return data
+          }).catch((err) => {
+            console.log("err: ", err);
+          });
+
+          this.$bus.$emit('company-added', res);
           this.$router.push({ path: '/backend/admin/companies'});
-          setTimeout(function() {
-            window.location.reload();
-          }, 3000);
         }
       }
     },

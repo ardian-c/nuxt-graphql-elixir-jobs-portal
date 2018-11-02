@@ -145,6 +145,15 @@ export default {
 		}
 	},
 
+  created () {
+    this.$bus.$on('category-added', (data) => {
+      this.categories = data.allCategories;
+      const pagination = { ...this.pagination };
+      pagination.total = data.countCategories;
+      this.pagination = pagination;
+    });
+  },
+
 	computed: {
     hasSelected() {
       return this.selectedRowKeys.length > 0

@@ -155,6 +155,15 @@ export default {
     }
   },
 
+  created () {
+    this.$bus.$on('company-added', (data) => {
+      this.companies = data.allCompanies;
+      const pagination = { ...this.pagination };
+      pagination.total = data.countCompanies;
+      this.pagination = pagination;
+    });
+  },
+
   computed: {
     hasSelected() {
       return this.selectedRowKeys.length > 0

@@ -61,6 +61,11 @@ module.exports = {
     },
     vendor: ['vue-infinite-scroll', 'vue-virtual-scroller']
   },
-  plugins: [{ src: '~/plugins/vue-infinite-scroll', ssr: false }, { src: '~/plugins/vue-virtual-scroller', ssr: false }, { src: '~plugins/nuxt-quill-plugin.js', ssr: false }]
+  plugins: [
+    { src: '~/plugins/vue-infinite-scroll', ssr: false },
+    { src: '~/plugins/vue-virtual-scroller', ssr: false },
+    { src: '~/plugins/nuxt-quill-plugin.js', ssr: false },
+    { src: '~/plugins/eventBus.js'}
+  ]
 }
 

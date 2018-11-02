@@ -42,4 +42,22 @@ defmodule ApiWeb.Resolvers.JobApplications do
       {:ok, job_application}
     end
   end
+
+  @doc """
+    Delete a job application
+  """
+  def delete_job_application(_, %{ job_application_id: job_application_id }, _) do
+    job_application = JobApplication
+              |> Repo.get!(job_application_id)
+
+    Repo.delete_all(JobApplicationCategory)
+
+    if job_application |> JobApplications.delete_job_application() do
+      res = %{code: 200, message: 'Job application deleted successfully!'}
+      {:ok, res }
+    else
+      res = %{code: 401, message: 'Something went wrong!'}
+      {:error, res }
+    end
+  end
 end

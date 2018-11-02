@@ -179,6 +179,13 @@ defmodule ApiWeb.Schema do
 
       resolve &Resolvers.JobApplications.add_new_job_application/3
     end
+
+    @desc "Delete job application"
+    field :delete_job_application, :generic_response do
+      arg :job_application_id, non_null(:id)
+
+      resolve &Resolvers.JobApplications.delete_job_application/3
+    end
   end
 
   #
