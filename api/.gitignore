@@ -1,5 +1,6 @@
 # App artifacts
 /_build
+/.deliver/releases
 /db
 /deps
 /*.ez
@@ -15,3 +16,5 @@ erl_crash.dump
 # secrets files as long as you replace their contents by environment
 # variables.
 /config/*.secret.exs
+
+
