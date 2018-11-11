@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d558bd58-c1b3-4602-999f-7901b6b74d14" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,17 +89,21 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="PNG" value="1" />
+          <entry key="args" value="1" />
           <entry key="beam" value="3" />
+          <entry key="conf" value="1" />
           <entry key="css" value="5" />
-          <entry key="ex" value="134" />
-          <entry key="exs" value="45" />
-          <entry key="gitignore" value="1" />
+          <entry key="eex" value="2" />
+          <entry key="ex" value="137" />
+          <entry key="exs" value="52" />
+          <entry key="gitignore" value="3" />
           <entry key="gql" value="29" />
           <entry key="graphqls" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="60" />
+          <entry key="js" value="62" />
           <entry key="json" value="9" />
           <entry key="less" value="5" />
+          <entry key="lock" value="1" />
           <entry key="md" value="2" />
           <entry key="sql" value="1" />
           <entry key="users" value="1" />
@@ -112,25 +115,27 @@
           <entry key="BEAM" value="3" />
           <entry key="CSS" value="5" />
           <entry key="Database Element" value="1" />
-          <entry key="Elixir Script" value="45" />
-          <entry key="Elixir file" value="134" />
+          <entry key="EEx" value="2" />
+          <entry key="Elixir Script" value="52" />
+          <entry key="Elixir file" value="137" />
           <entry key="GraphQL Schema" value="1" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="60" />
+          <entry key="JavaScript" value="62" />
           <entry key="Less" value="5" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="31" />
+          <entry key="PLAIN_TEXT" value="36" />
           <entry key="Scratch" value="1" />
           <entry key="Vue.js" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="conf" value="158" />
           <entry key="css" value="35" />
           <entry key="ex" value="10768" />
-          <entry key="exs" value="648" />
-          <entry key="gitignore" value="9" />
+          <entry key="exs" value="716" />
+          <entry key="gitignore" value="41" />
           <entry key="gql" value="1073" />
           <entry key="js" value="985" />
           <entry key="json" value="2" />
@@ -142,13 +147,13 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="35" />
-          <entry key="Elixir Script" value="648" />
+          <entry key="Elixir Script" value="716" />
           <entry key="Elixir file" value="10768" />
           <entry key="Graql" value="180" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="985" />
           <entry key="Less" value="51" />
-          <entry key="PLAIN_TEXT" value="911" />
+          <entry key="PLAIN_TEXT" value="1101" />
           <entry key="Vue.js" value="14325" />
         </counts>
       </usages-collector>
@@ -159,52 +164,19 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/job_applications/create.vue">
+            <entry file="file://$PROJECT_DIR$/api/config/prod.secret.exs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8176">
-                  <caret line="522" column="27" selection-start-line="522" selection-start-column="27" selection-end-line="522" selection-end-column="27" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2496">
-                  <caret line="157" column="2" selection-start-line="157" selection-start-column="2" selection-end-line="164" selection-end-column="4" />
-                  <folding>
-                    <element signature="e#3045#3109#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/categories/index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="127">
-                  <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+                <state relative-caret-position="112">
+                  <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/api/mix.exs">
+            <entry file="file://$PROJECT_DIR$/api/config/prod.exs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="67" column="46" lean-forward="true" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/_id.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1408">
-                  <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#3249#3290#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="614">
+                  <caret line="54" selection-start-line="54" selection-end-line="54" />
                 </state>
               </provider>
             </entry>
@@ -213,62 +185,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema.ex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2720">
+                <state relative-caret-position="281">
                   <caret line="170" column="42" selection-start-line="170" selection-start-column="42" selection-end-line="170" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="944">
-                  <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="67" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="42" selection-start-line="42" selection-end-line="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/create.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="337">
-                  <caret line="227" column="26" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#3709#3750#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/job_applications/index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1600">
-                  <caret line="101" column="4" selection-start-line="94" selection-start-column="2" selection-end-line="101" selection-end-column="4" />
-                  <folding>
-                    <element signature="e#2736#2813#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1184">
-                  <caret line="74" column="33" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -330,10 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api/lib/guardian.ex" />
-        <option value="$PROJECT_DIR$/api/lib/api_web/router.ex" />
-        <option value="$PROJECT_DIR$/api/mix.exs" />
-        <option value="$PROJECT_DIR$/api/lib/api_web/endpoint.ex" />
         <option value="$PROJECT_DIR$/web/apollo/fragments/user.gql" />
         <option value="$PROJECT_DIR$/web/apollo/mutations/userLogin.gql" />
         <option value="$PROJECT_DIR$/api/lib/api_web/context.ex" />
@@ -364,7 +281,6 @@
         <option value="$PROJECT_DIR$/api/lib/api/job_applications/job_application.ex" />
         <option value="$PROJECT_DIR$/api/lib/api_web/uploaders/document_uploader.ex" />
         <option value="$PROJECT_DIR$/api/lib/api/documents/document.ex" />
-        <option value="$PROJECT_DIR$/api/.gitignore" />
         <option value="$PROJECT_DIR$/api/lib/api_web/schema/data_types.ex" />
         <option value="$PROJECT_DIR$/api/lib/api/job_applications/job_applications.ex" />
         <option value="$PROJECT_DIR$/web/apollo/mutations/deleteJobApplication.gql" />
@@ -381,6 +297,11 @@
         <option value="$PROJECT_DIR$/api/lib/api_web/resolvers/job_application.ex" />
         <option value="$PROJECT_DIR$/web/pages/backend/admin/companies/create.vue" />
         <option value="$PROJECT_DIR$/web/pages/backend/admin/companies/index.vue" />
+        <option value="$PROJECT_DIR$/api/mix.exs" />
+        <option value="$PROJECT_DIR$/api/.deliver/conf" />
+        <option value="$PROJECT_DIR$/api/.gitignore" />
+        <option value="$PROJECT_DIR$/api/config/prod.exs" />
+        <option value="$PROJECT_DIR$/api/rel/vm.args" />
       </list>
     </option>
   </component>
@@ -428,6 +349,36 @@
               <item name="npune" type="b2602c69:ProjectViewProjectNode" />
               <item name="npune" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
+              <item name="npune" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
+              <item name="npune" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name=".deliver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
+              <item name="npune" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
+              <item name="npune" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="npune" type="b2602c69:ProjectViewProjectNode" />
+              <item name="npune" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -438,10 +389,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="SearchEverywhereHistoryKey" value="mix.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;categories/create&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/create.vue&#10;categories/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/index.vue&#10;index.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/job_applications/index.vue&#10;index.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;create.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/create.vue&#10;/resolvers/comp&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;company.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;JobApplications/job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;resolvers/job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;resolvers/compa&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;.gitignore&#9;FILE&#9;file://C:/laragon/www/other/npune/api/.gitignore&#10;create_documents&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915204442_create_documents.exs&#10;Document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;CompanyLogo&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/uploaders/company_logo_uploader.ex&#10;companies.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/companies.ex&#10;job_applicati&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;companies&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;categories.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/categories.ex&#10;companies/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/see&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;job_applicatio&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;package.json&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;allCompanies.gql&#9;FILE&#9;file://C:/laragon/www/other/npune/web/apollo/queries/allCompanies.gql&#10;companies/inde&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;add_job_application_id_to_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181025233937_add_job_application_id_to_documents_table.exs&#10;job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;add_job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;add_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;data_types.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema/data_types.ex&#10;job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;user_view.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/views/user_view.ex&#10;main.css&#9;FILE&#9;file://C:/laragon/www/other/npune/web/assets/css/main.css&#10;register.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/register.vue&#10;context.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/context.ex&#10;endpoint.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;mix.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;nuxt.con&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;router.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/router.ex&#10;Navbar.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/components/homepage/Navbar.vue&#10;config/dev&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;package.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;dev.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;config.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/config.exs&#10;compan&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;docum&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;create_users.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915112539_create_users.exs" />
+    <property name="SearchEverywhereHistoryKey" value="config/prod&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/prod.secret.exs&#10;nuxt.con&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;nu&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;endpoint.&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;mix.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;categories/create&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/create.vue&#10;categories/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/index.vue&#10;index.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/job_applications/index.vue&#10;index.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;create.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/create.vue&#10;/resolvers/comp&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;company.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;JobApplications/job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;resolvers/job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;resolvers/compa&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;.gitignore&#9;FILE&#9;file://C:/laragon/www/other/npune/api/.gitignore&#10;create_documents&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915204442_create_documents.exs&#10;Document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;CompanyLogo&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/uploaders/company_logo_uploader.ex&#10;companies.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/companies.ex&#10;job_applicati&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;companies&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;categories.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/categories.ex&#10;companies/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/see&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;job_applicatio&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;package.json&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;allCompanies.gql&#9;FILE&#9;file://C:/laragon/www/other/npune/web/apollo/queries/allCompanies.gql&#10;companies/inde&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;add_job_application_id_to_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181025233937_add_job_application_id_to_documents_table.exs&#10;job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;add_job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;add_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;data_types.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema/data_types.ex&#10;job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;user_view.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/views/user_view.ex&#10;main.css&#9;FILE&#9;file://C:/laragon/www/other/npune/web/assets/css/main.css&#10;register.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/register.vue&#10;context.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/context.ex&#10;endpoint.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;mix.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;router.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/router.ex&#10;Navbar.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/components/homepage/Navbar.vue&#10;config/dev&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs&#10;package.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;dev.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/dev.exs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541121629596" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541952450769" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="jsgraphql-schema-editor-notification" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -493,18 +444,18 @@
       <workItem from="1537614531063" duration="45695000" />
       <workItem from="1540493667121" duration="39583000" />
       <workItem from="1540735013721" duration="50681000" />
-      <workItem from="1541812807049" duration="575000" />
+      <workItem from="1541812807049" duration="6411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221841000" />
+    <option name="totallyTimeSpent" value="227677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19664429" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15302013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -581,71 +532,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/pages/register.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="212" column="8" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/priv/repo/migrations/20181021163626_create_job_application_categories_table.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="48" lean-forward="true" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/apollo/fragments/generic_response.gql" />
-    <entry file="file://$PROJECT_DIR$/web/apollo/mutations/login.gql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/priv/repo/seeds.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="22" column="99" lean-forward="true" selection-start-line="22" selection-start-column="99" selection-end-line="22" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/apollo/mutations/deleteCategory.gql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/categories.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api/job_applications/job_application_categories.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/uploads/companies/37/original.PNG" />
     <entry file="file://$PROJECT_DIR$/api/uploads/companies/26/original.jpg" />
     <entry file="file://$PROJECT_DIR$/api/uploads/companies/28/original.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -706,13 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -814,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/nuxt.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/job_applications/_id.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -862,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2720">
-          <caret line="170" column="42" selection-start-line="170" selection-start-column="42" selection-end-line="170" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/lib/api_web/resolvers/companies.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="944">
@@ -902,7 +767,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/backend/admin/companies/create.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="529">
           <caret line="227" column="26" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
           <folding>
             <element signature="e#3709#3750#0" expanded="true" />
@@ -917,10 +782,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/mix.exs">
+    <entry file="file://$PROJECT_DIR$/api/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/mix.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="67" column="46" lean-forward="true" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+          <caret line="5" column="222" selection-start-line="5" selection-start-column="222" selection-end-line="5" selection-end-column="222" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/rel/config.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-298" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/rel/vm.args.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" lean-forward="true" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/rel/vm.args">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.deliver/conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api.ex">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/endpoint.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-96" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/nuxt.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/priv/repo/seeds.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="116" selection-start-line="22" selection-start-column="99" selection-end-line="22" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api/application.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/mix.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api_web/schema.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="170" column="42" selection-start-line="170" selection-start-column="42" selection-end-line="170" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/prod.secret.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config/prod.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
