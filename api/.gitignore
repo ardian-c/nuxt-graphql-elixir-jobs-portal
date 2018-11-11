@@ -5,6 +5,7 @@
 /deps
 /*.ez
 /uploads
+/.idea
 
 # Generated on crash by the VM
 erl_crash.dump

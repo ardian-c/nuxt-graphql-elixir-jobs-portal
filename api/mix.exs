@@ -20,7 +20,7 @@ defmodule Api.Mixfile do
   def application do
     [
       mod: {Api.Application, []},
-      applications: [:edeliver],
+      # applications: [:edeliver],
       extra_applications: [:logger, :runtime_tools, :absinthe, :absinthe_plug]
     ]
   end
@@ -68,7 +68,7 @@ defmodule Api.Mixfile do
       {:sweet_xml, "~> 0.6"},
 
       # Deploy
-      {:edeliver, ">= 1.6.0"},
+      # {:edeliver, ">= 1.6.0"},
       {:distillery, "~> 2.0", warn_missing: false},
 
       # Mails
