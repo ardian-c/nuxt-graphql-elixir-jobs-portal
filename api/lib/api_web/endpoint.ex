@@ -38,7 +38,7 @@ defmodule ApiWeb.Endpoint do
     key: "_api_key",
     signing_salt: "Qk8dlbhD"
 
-  plug CORSPlug, origin: ["http://localhost:3000"]
+  plug CORSPlug, origin: ["http://localhost:3000", "http://159.65.115.79:3000", "http://159.65.115.79"]
 
   plug ApiWeb.Router
 

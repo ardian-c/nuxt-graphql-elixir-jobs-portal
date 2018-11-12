@@ -33,7 +33,7 @@ module.exports = {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.HTTP_ENDPOINT || 'http://localhost:4000/api/v1/graphql'
+        httpEndpoint: process.env.HTTP_ENDPOINT || 'http://159.65.115.79:4001/api/v1/graphql'
       }
     }
   },
