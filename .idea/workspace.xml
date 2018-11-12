@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d558bd58-c1b3-4602-999f-7901b6b74d14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/lib/api/release_tasks.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/rel/commands/migrate.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/rel/commands/seed.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/prod.exs" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/prod.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/lib/api/repo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api/repo.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/lib/api_web/endpoint.ex" beforeDir="false" afterPath="$PROJECT_DIR$/api/lib/api_web/endpoint.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/rel/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/api/rel/config.exs" afterDir="false" />
-    </list>
+    <list default="true" id="d558bd58-c1b3-4602-999f-7901b6b74d14" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +92,7 @@
           <entry key="conf" value="1" />
           <entry key="css" value="5" />
           <entry key="eex" value="3" />
-          <entry key="ex" value="146" />
+          <entry key="ex" value="147" />
           <entry key="exs" value="54" />
           <entry key="gitignore" value="4" />
           <entry key="gql" value="29" />
@@ -125,7 +116,7 @@
           <entry key="Database Element" value="1" />
           <entry key="EEx" value="3" />
           <entry key="Elixir Script" value="54" />
-          <entry key="Elixir file" value="146" />
+          <entry key="Elixir file" value="147" />
           <entry key="GraphQL Schema" value="1" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="9" />
@@ -141,7 +132,7 @@
         <counts>
           <entry key="conf" value="158" />
           <entry key="css" value="35" />
-          <entry key="ex" value="10782" />
+          <entry key="ex" value="10785" />
           <entry key="exs" value="828" />
           <entry key="gitignore" value="57" />
           <entry key="gql" value="1073" />
@@ -157,7 +148,7 @@
         <counts>
           <entry key="CSS" value="35" />
           <entry key="Elixir Script" value="828" />
-          <entry key="Elixir file" value="10782" />
+          <entry key="Elixir file" value="10785" />
           <entry key="Graql" value="180" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="985" />
@@ -184,8 +175,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/lib/api/repo.ex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
-                  <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="30" />
+                <state relative-caret-position="32">
+                  <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -199,11 +190,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/rel/commands/migrate.sh">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="1" selection-end-column="54" />
+                <state relative-caret-position="16">
+                  <caret line="1" column="8" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -217,7 +208,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/lib/api_web/endpoint.ex">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="703">
@@ -349,13 +340,13 @@
         <option value="$PROJECT_DIR$/api/lib/api/application.ex" />
         <option value="$PROJECT_DIR$/api/mix.exs" />
         <option value="$PROJECT_DIR$/api/.gitignore" />
-        <option value="$PROJECT_DIR$/api/lib/api/repo.ex" />
         <option value="$PROJECT_DIR$/api/config/prod.exs" />
         <option value="$PROJECT_DIR$/api/lib/api/release_tasks.ex" />
         <option value="$PROJECT_DIR$/api/rel/commands/migrate.sh" />
         <option value="$PROJECT_DIR$/api/rel/commands/seed.sh" />
         <option value="$PROJECT_DIR$/api/rel/config.exs" />
         <option value="$PROJECT_DIR$/api/lib/api_web/endpoint.ex" />
+        <option value="$PROJECT_DIR$/api/lib/api/repo.ex" />
       </list>
     </option>
   </component>
@@ -466,7 +457,7 @@
     <property name="SearchEverywhereHistoryKey" value="vm.args&#9;FILE&#9;file://C:/laragon/www/other/npune/api/rel/vm.args&#10;rel/config.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/rel/config.exs&#10;repo.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/repo.ex&#10;.gi&#9;FILE&#9;file://C:/laragon/www/other/npune/api/.gitignore&#10;mix.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;config/prod&#9;FILE&#9;file://C:/laragon/www/other/npune/api/config/prod.secret.exs&#10;nuxt.con&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;nu&#9;FILE&#9;file://C:/laragon/www/other/npune/web/nuxt.config.js&#10;seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;endpoint.&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;categories/create&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/create.vue&#10;categories/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/categories/index.vue&#10;index.&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/job_applications/index.vue&#10;index.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;create.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/create.vue&#10;/resolvers/comp&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;company.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/company.ex&#10;JobApplications/job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;resolvers/job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;resolvers/compa&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;.gitignore&#9;FILE&#9;file://C:/laragon/www/other/npune/api/.gitignore&#10;create_documents&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20180915204442_create_documents.exs&#10;Document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;job_application.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;CompanyLogo&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/uploaders/company_logo_uploader.ex&#10;companies.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/companies/companies.ex&#10;job_applicati&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;companies&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/companies.ex&#10;categories.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/categories.ex&#10;companies/index&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/see&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;job_applicatio&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;package.json&#9;FILE&#9;file://C:/laragon/www/other/npune/web/package.json&#10;allCompanies.gql&#9;FILE&#9;file://C:/laragon/www/other/npune/web/apollo/queries/allCompanies.gql&#10;companies/inde&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/backend/admin/companies/index.vue&#10;priv/seed&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/seeds.exs&#10;document.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/documents/document.ex&#10;add_job_application_id_to_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181025233937_add_job_application_id_to_documents_table.exs&#10;job_appli&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api/job_applications/job_application.ex&#10;add_job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;add_&#9;FILE&#9;file://C:/laragon/www/other/npune/api/priv/repo/migrations/20181021171522_add_company_id_to_job_applications_table.exs&#10;data_types.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/schema/data_types.ex&#10;job_application&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/resolvers/job_application.ex&#10;user_view.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/views/user_view.ex&#10;main.css&#9;FILE&#9;file://C:/laragon/www/other/npune/web/assets/css/main.css&#10;register.vue&#9;FILE&#9;file://C:/laragon/www/other/npune/web/pages/register.vue&#10;context.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/context.ex&#10;endpoint.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/endpoint.ex&#10;mix.exs&#9;FILE&#9;file://C:/laragon/www/other/npune/api/mix.exs&#10;router.ex&#9;FILE&#9;file://C:/laragon/www/other/npune/api/lib/api_web/router.ex" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542015708544" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542016463235" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="jsgraphql-schema-editor-notification" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -518,12 +509,12 @@
       <workItem from="1537614531063" duration="45695000" />
       <workItem from="1540493667121" duration="39583000" />
       <workItem from="1540735013721" duration="50681000" />
-      <workItem from="1541812807049" duration="18083000" />
+      <workItem from="1541812807049" duration="18734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239349000" />
+    <option name="totallyTimeSpent" value="240000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -606,13 +597,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/deps/arc/lib/arc/definition.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/lib/api/documents/documents.ex">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -925,20 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/lib/api/repo.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/rel/commands/migrate.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/rel/commands/seed.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -964,6 +934,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/deps/ecto/lib/ecto/repo.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2544">
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/lib/api/repo.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/rel/commands/migrate.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>
