@@ -39,6 +39,10 @@ environment :prod do
   set include_src: false
   set cookie: :"..%okycv})etx*Bm&]e&S*)!(7535[cU8<IxH,fREo/bR[Q,Xw?KOF5TH=)$x[Hr"
   set vm_args: "rel/vm.args"
+  set commands: [
+      seed: "rel/commands/seed.sh",
+      migrate: "rel/commands/migrate.sh"
+  ]
 end
 
 # You may define one or more releases in this file.
@@ -49,7 +53,9 @@ end
 release :api do
   set version: current_version(:api)
   set applications: [
-    :runtime_tools
+    :runtime_tools,
+    # shutdown the node if the application crashes permanently
+    api: :permanent
   ]
 end
 
