@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/jobApplication.gql"
+query singleJobApplication($id: ID!) {
+  singleJobApplication(id: $id) {
+    ...jobApplication
+  }
+}

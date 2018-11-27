@@ -1,0 +1,7 @@
+query allCitiesOrderByPosts {
+   allCitiesOrderByPosts {
+      count_posts
+     	id
+     	name
+   }
+}

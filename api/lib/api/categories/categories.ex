@@ -7,6 +7,7 @@ defmodule Api.Categories do
   alias Api.Repo
 
   alias Api.Categories.Category
+  alias Api.JobApplications.JobApplicationCategory;
 
   def search(query, nil), do: query
 
@@ -15,6 +16,24 @@ defmodule Api.Categories do
       r in query,
       where: ilike(r.name, ^"%#{keyword}%") or ilike(r.description, ^"%#{keyword}%"),
       order_by: [desc: :inserted_at]
+    )
+  end
+
+  def with_posts_count(query, nil), do: query
+
+  def with_posts_count(query) do
+    from(
+      jc in JobApplicationCategory,
+      join: c in "categories", on: jc.category_id == c.id,
+      join: j in "job_applications", on: jc.job_application_id == j.id,
+      group_by: [jc.category_id, c.name],
+      order_by: [desc: count(jc.job_application_id)],
+      select: %{
+        id: jc.category_id,
+        name: c.name,
+        count_posts: count(jc.job_application_id)
+      },
+      limit: 10
     )
   end
 

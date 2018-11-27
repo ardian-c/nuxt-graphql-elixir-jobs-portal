@@ -65,6 +65,12 @@ defmodule ApiWeb.Schema.DataTypes do
     field :updated_at, :string
   end
 
+  object :category_with_posts do
+    field :count_posts, :string
+    field :id, :id
+    field :name, :string
+  end
+
   @desc "Company register data"
   input_object :category_data do
     field :name, :string
@@ -84,7 +90,7 @@ defmodule ApiWeb.Schema.DataTypes do
     field :ends_at, :string
     field :published_at, :string
     field :published_timezone, :string
-    # field :company, :company, resolve: dataloader(Companies)
+    field :company, :company, resolve: dataloader(Companies)
   end
 
   # job application

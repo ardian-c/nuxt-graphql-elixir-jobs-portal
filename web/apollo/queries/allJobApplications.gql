@@ -4,5 +4,9 @@ query allJobApplications($offset: Int, $keyword: String) {
   allJobApplications(offset: $offset, keyword: $keyword) {
     id
     title
+    slug
+    company {
+      name
+    }
   }
 }

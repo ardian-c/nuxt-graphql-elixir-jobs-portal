@@ -1,0 +1,7 @@
+query allCategoriesOrderByPosts {
+   allCategoriesOrderByPosts {
+      count_posts
+     	id
+     	name
+   }
+}

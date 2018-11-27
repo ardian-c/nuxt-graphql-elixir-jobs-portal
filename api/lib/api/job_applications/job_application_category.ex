@@ -6,6 +6,9 @@ defmodule Api.JobApplications.JobApplicationCategory do
   schema "job_application_categories" do
     field :job_application_id, :integer
     field :category_id, :integer
+
+    belongs_to(:job_applications, Api.JobApplications.JobApplication)
+    belongs_to(:categories, Api.Categories.Category)
   end
 
   @doc false

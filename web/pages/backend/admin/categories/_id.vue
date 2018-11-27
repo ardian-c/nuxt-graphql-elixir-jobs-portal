@@ -54,7 +54,7 @@
 
 <script>
 
-import singleCategoryQuery from '~/apollo/queries/singleCategory.gql';
+import SINGLE_CATEGORY_QUERY from '~/apollo/queries/singleCategory.gql';
 
 export default {
   layout: 'backend',
@@ -70,7 +70,7 @@ export default {
 
   apollo: {
     singleCategory: {
-      query:  singleCategoryQuery,
+      query:  SINGLE_CATEGORY_QUERY,
       prefetch: ({ route }) => ({ id: route.params.id }),
       variables() {
         return { id: this.$route.params.id }

@@ -1,0 +1,32 @@
+{
+	"name": "sample-scraper",
+	"version": "1.0.0",
+	"description": "This is a boilerplate of an Apify actor.",
+	"main": "main.js",
+	"dependencies": {
+		"apify": "^0.8.0",
+		"cheerio": "^1.0.0-rc.2",
+		"colors": "^1.3.2",
+		"cross-env": "^5.2.0",
+		"csv-writer": "^1.2.0",
+		"dotenv": "^6.1.0",
+		"moment": "^2.22.2",
+		"pg": "^7.6.1"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"start": "node -r dotenv/config main.js",
+		"start-all": "node -r dotenv/config main.js && node src/scraper/telegrafi.js && node src/scraper/portalpune.js && node src/scraper/kosovajob.js",
+		"start-telegrafi": "node -r dotenv/config src/scraper/telegrafi.js",
+		"start-portalpune": "node -r dotenv/config src/scraper/portalpune.js",
+		"start-kosovajob": "node -r dotenv/config src/scraper/kosovajob.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"author": "",
+	"license": "ISC",
+	"homepage": ""
+}

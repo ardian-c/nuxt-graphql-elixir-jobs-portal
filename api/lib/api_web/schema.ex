@@ -67,6 +67,11 @@ defmodule ApiWeb.Schema do
       resolve &Resolvers.Categories.get_all_categories_no_pagination/3
     end
 
+    @desc "Get all categories - order by most posts"
+    field :all_categories_order_by_posts, list_of(:category_with_posts) do
+      resolve &Resolvers.Categories.get_all_categories_order_by_posts/3
+    end
+
     @desdc "Get all categories, search name or description"
     field :single_category_by_name_or_description, list_of(:category) do
       arg :keyword, non_null(:string)
@@ -99,6 +104,14 @@ defmodule ApiWeb.Schema do
       arg :keyword, :string, default_value: nil
 
       resolve &Resolvers.JobApplications.get_all_job_applications/3
+    end
+
+    @desc "Get all job applications with filters"
+    field :get_all_job_applications_filtered, list_of(:job_application) do
+      arg :offset, :integer, default_value: 0
+      arg :keyword, :string, default_value: nil
+
+      resolve &Resolvers.JobApplications.get_all_job_applications_filtered/3
     end
 
     @desc "Count of all job applications"

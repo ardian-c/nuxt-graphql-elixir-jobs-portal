@@ -21,6 +21,14 @@ defmodule ApiWeb.Resolvers.JobApplications do
     {:ok, job_applications}
   end
 
+  def get_all_job_applications_filtered(_, %{ offset: offset, keyword: keyword }, _) do
+    job_applications = JobApplication
+      |> JobApplications.search(keyword)
+      |> Repo.paginate(50)
+      |> Repo.all()
+    {:ok, job_applications}
+  end
+
 
   @doc """
     Add new job application

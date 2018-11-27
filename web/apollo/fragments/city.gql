@@ -1,4 +1,4 @@
-fragment category on Category {
+fragment city on City {
 	id
 	name
 	description

@@ -5,6 +5,7 @@ defmodule ApiWeb.Resolvers.Categories do
 	alias Api.Categories
 	alias Api.Categories.Category
 
+
 	@desc "Categories get all"
   def get_all_categories(_, %{ offset: offset, keyword: keyword }, _) do
     categories = Category
@@ -12,6 +13,14 @@ defmodule ApiWeb.Resolvers.Categories do
         |> Repo.paginate(offset)
         |> Repo.all()
     {:ok, categories}
+  end
+
+  @desc "Categories get all - order by posts"
+  def get_all_categories_order_by_posts(_, %{}, _) do
+    res = Category
+        |> Categories.with_posts_count()
+        |> Repo.all()
+    {:ok, res}
   end
 
   @desc "Categories get all - no pagination"
