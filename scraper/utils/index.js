@@ -5,6 +5,9 @@ module.exports = {
     var slug = "";
     // Change to lower case
     var titleLower = title.toLowerCase();
+    titleLower.replace(/\s\s+/g,' ');
+    titleLower.replace(/[^a-zA-Z0-9]/g, '-');
+
     // Letter "e"
     slug = titleLower.replace(/e|é|è|ẽ|ë|ẻ|ẹ|ê|ế|ề|ễ|ể|ệ/gi, "e");
     // Letter "a"

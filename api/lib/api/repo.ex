@@ -1,6 +1,7 @@
 defmodule Api.Repo do
   use Ecto.Repo, otp_app: :api
   import Ecto.Query, warn: false
+
   @per_page 25
 
   @doc """

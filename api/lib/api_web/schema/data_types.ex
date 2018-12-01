@@ -1,6 +1,8 @@
 defmodule ApiWeb.Schema.DataTypes do
 
   use Absinthe.Schema.Notation
+  use Absinthe.Ecto, repo: Api.Repo
+
   import Absinthe.Resolution.Helpers
 
   alias Api.Companies
@@ -25,6 +27,22 @@ defmodule ApiWeb.Schema.DataTypes do
     field :is_admin, :string
     field :inserted_at, :string
     field :updated_at, :string
+  end
+
+  # city
+  object :city do
+    field :id, :id
+    field :name, :string
+    field :description, :string
+    field :inserted_at, :string
+    field :updated_at, :string
+  end
+
+  object :city_with_posts do
+    field :count_posts, :string
+    field :id, :id
+    field :name, :string
+    field :description, :string
   end
 
   # company
@@ -107,9 +125,12 @@ defmodule ApiWeb.Schema.DataTypes do
     field :ends_at, :string
     field :published_at, :string
     field :published_timezone, :string
+    # field :company, :company, resolve: assoc(:companies)
     field :company, :company, resolve: dataloader(Companies)
     field :categories, list_of(:category), resolve: dataloader(Categories)
     field :documents, list_of(:document), resolve: dataloader(Documents)
+    field :inserted_at, :string
+    field :updated_at, :string
   end
 
   input_object :job_application_data do
@@ -122,6 +143,7 @@ defmodule ApiWeb.Schema.DataTypes do
     field :source, :string
     field :ends_at, :string
     field :published_at, :string
+    field :city_id, :integer, default_value: ""
     field :company_id, :string, default_value: ""
     field :categories, list_of(:string)
     field :is_scheduled, :boolean

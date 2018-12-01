@@ -54,6 +54,21 @@
 
                 <a-form-item
                   hasFeedback
+                  label="City"
+                >
+                  <a-select
+                    v-model="job_application.city_id"
+                    ref="cityInput">
+                    <a-select-option
+                      v-for="(s, idx) in cities"
+
+                      :key="idx"
+                      :value="s.id">{{ s.description }}</a-select-option>
+                  </a-select>
+                </a-form-item>
+
+                <a-form-item
+                  hasFeedback
                   label="Status"
                 >
                   <a-select
@@ -230,6 +245,7 @@ import SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY from '~/apollo/queries/singl
 import ALL_JOB_APPLICATIONS_QUERY from '~/apollo/queries/allJobApplications.gql';
 import ALL_COMPANIES_QUERY from '~/apollo/queries/allCompaniesNoPagination.gql';
 import ALL_CATEGORIES_QUERY from '~/apollo/queries/allCategoriesNoPagination.gql';
+import ALL_CITIES_QUERY from  '~/apollo/queries/allCitiesNoPagination.gql';
 import NEW_JOB_APPLICATION_MUTATION from '~/apollo/mutations/newJobApplication.gql';
 
 const client = new ApolloClient({
@@ -283,6 +299,7 @@ export default {
       ends_date_time: moment(),
       publish_date: moment(),
       publish_time: moment(),
+      cities: [],
       statuses: ['publish', 'draft', 'trashed'],
       priorities: ['lowest priority (1)', 'medium priority (2)', 'high priority (3)'],
       companies: [],
@@ -299,6 +316,7 @@ export default {
         published_at: '',
         company_id: '',
         categories: [],
+        city_id: 'Prishtinë',
         is_scheduled: false
       },
       form: null,
@@ -317,6 +335,7 @@ export default {
   mounted() {
     // this.getCategories();
     this.getCompanies();
+    this.getCities();
   },
 
   computed: {
@@ -383,6 +402,19 @@ export default {
         variables: {}
       }).then(({ data}) => {
         this.companies = data.allCompaniesNoPagination;
+      }).catch((err) => {
+        console.log('err: ', err);
+      });
+    },
+
+    async getCities() {
+      const apolloClient = this.$apollo.provider.defaultClient;
+      const cities = await apolloClient.query({
+        query: ALL_CITIES_QUERY,
+        variables: {}
+      }).then(({ data}) => {
+        this.cities = data.allCitiesNoPagination;
+        console.log("Cities: ", this.cities);
       }).catch((err) => {
         console.log('err: ', err);
       });
@@ -487,6 +519,12 @@ export default {
             status = 1;
         }
 
+        if(this.job_application.city_id === 'Prishtinë') {
+          input.city_id = 17;
+        } else {
+          input.city_id = +this.job_application.city_id;
+        }
+
         input.priority = priority;
         input.status = status;
         input.ends_at = this.ends_date.format('YYYY-MM-DD').toString() + ' ' + this.ends_date_time.format('HH:mm:ss').toString();
@@ -497,6 +535,8 @@ export default {
         });
 
         input.categories = categories;
+
+        console.log("::: INPUT  :::", input);
 
         const new_job_application = await client.mutate({
           mutation: NEW_JOB_APPLICATION_MUTATION,
@@ -553,6 +593,8 @@ export default {
       var slug = "";
       // Change to lower case
       var titleLower = title.toLowerCase();
+      titleLower.replace(/\s\s+/g,' ');
+      titleLower.replace(/[^a-zA-Z0-9]/g, '-');
       // Letter "e"
       slug = titleLower.replace(/e|é|è|ẽ|ë|ẻ|ẹ|ê|ế|ề|ễ|ể|ệ/gi, 'e');
       // Letter "a"

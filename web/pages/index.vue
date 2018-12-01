@@ -11,7 +11,7 @@
           :offset="12"
           >
           <a-row type="flex" justify="end">
-            <strong>19 698</strong> positions in <strong>{{ total }}</strong> ads
+            <strong>Showing:&nbsp;{{ job_applications.length }}</strong>&nbsp;from&nbsp;<strong> {{ total }}</strong>&nbsp;jobs
           </a-row>
         </a-col>
       </a-row>
@@ -22,7 +22,7 @@
         <a-row>
           <a-col :span="8">
             <a-row type="flex" justify="start">
-              <a-button icon="star-o">Save Search</a-button>
+              <a-button icon="delete" @click="clearSearchFilters">Clear Search</a-button>
             </a-row>
           </a-col>
 
@@ -56,16 +56,17 @@
       <div class="job-main">
         <a-col :span="6">
           <div class="job-advanced-filters">
-            <p>Published</p>
+            <!--<p>Published</p>
             <div>
               <a-checkbox @change="showOnlyTodayListings">New Today (42)</a-checkbox>
               <br /><br />
             </div>
-
+-->
             <div>
               <a-input-search
                 placeholder="search for jobs"
                 style="width: 200px"
+                v-model="filterByKeyword"
                 @search="onSearch"
               />
               <br /><br />
@@ -74,15 +75,15 @@
             <div>
               <p>Categories</p>
               <p v-for="cat of categories" :key="cat.id">
-                <a-checkbox @change="showByCategory(cat.id)">{{ cat.name }} ({{ cat.count_posts }})</a-checkbox>
+                <a-checkbox @change="showByCategory($event, cat.id)">{{ cat.name }} ({{ cat.count_posts }})</a-checkbox>
               </p>
             </div>
 
             <div>
-              <p>Area</p>
-              <p v-for="area of areas" :key="area.value">
-                <a-checkbox @change="showByArea(area)">{{ area.label }} ({{ area.count }})</a-checkbox>
-              </p>
+              <p>Cities</p>
+              <a-radio-group @change="showByCity" v-model="filterByCity">
+                <a-radio :style="radioStyle"  v-for="city of cities" :value="city.id" :key="city.id">{{ city.description }} ({{ city.count_posts}})</a-radio>
+              </a-radio-group>
             </div>
           </div>
         </a-col>
@@ -105,19 +106,21 @@
         <a-col :span="18">
           <a-list>
             <virtual-scroller
-              style="height: 800px"
+              style="height:850px"
               :items="job_applications"
-              item-height="150"
+              item-height="80"
               v-infinite-scroll="handleInfiniteOnLoad"
               :infinite-scroll-disabled="busy"
               :infinite-scroll-distance="10"
+              itemLayout="horizontal"
             >
               <a-list-item slot-scope="{item}">
                 <a-list-item-meta :description="item.title">
-                  <a slot="title" :href="item.slug">{{item.title}}</a>
-                  <a-avatar slot="avatar" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                  <a slot="title" :href="'jobs/' + item.slug">{{item.title}}</a>
+                  <a-avatar slot="avatar" shape="square" src="https://i.imgur.com/o8R9P2o.jpg" />
                 </a-list-item-meta>
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aliquam autem, beatae consequuntur culpa dolorem dolorum eius facilis fugiat in libero maxime natus nostrum, perspiciatis sapiente vel veniam veritatis vitae.</div>
+                <div style="padding: 0 1em;"><a-button >View Position</a-button>
+                </div>
               </a-list-item>
             </virtual-scroller>
             <a-spin v-if="loading"  class="jobs-loading" />
@@ -129,8 +132,10 @@
 </template>
 
 <script>
+import * as moment from 'moment';
 
 import JOB_APPLICATIONS_QUERY from '~/apollo/queries/allJobApplications.gql';
+import JOB_CITIES_ORDER_BY_POSTS_QUERY from '~/apollo/queries/allCitiesOrderByPosts.gql';
 import JOB_CATEGORIES_ORDER_BY_POSTS_QUERY from '~/apollo/queries/allCategoriesOrderByPosts.gql';
 
 export default {
@@ -140,8 +145,11 @@ export default {
       prefetch: true,
       query: JOB_APPLICATIONS_QUERY,
       variables: {
-        offset: this.offset,
-        keyword: ''
+        offset: 0,
+        keyword: '',
+        time: '',
+        jcat: null,
+        jcity: null,
       },
       result({ data }) {
         console.log('prefetched jobs: ', data);
@@ -158,6 +166,16 @@ export default {
         console.log('prefetched categories: ', data);
         this.categories = data.allCategoriesOrderByPosts;
       }
+    },
+
+    allCitiesOrderByPosts: {
+      prefetch: true,
+      query: JOB_CITIES_ORDER_BY_POSTS_QUERY,
+      variables: {},
+      result({ data }) {
+        console.log('prefetched city: ', data);
+        this.cities = data.allCitiesOrderByPosts;
+      }
     }
   },
 
@@ -173,16 +191,22 @@ export default {
       busy: false,
       total: 0,
       current: ['home'],
+      radioStyle: {
+        display: 'block',
+        height: '30px',
+        lineHeight: '30px',
+      },
+      filterByCity: '',
+      filterByKeyword: '',
+      filters: {
+        offset: 0,
+        keyword: '',
+        time: '',
+        category: null,
+        city: null
+      },
       categories: [],
-      areas: [
-        { label: 'Area 1', value: 0, count: 476 },
-        { label: 'Area 2', value: 1, count: 434 },
-        { label: 'Area 3', value: 2, count: 151 },
-        { label: 'Area 4', value: 3, count: 269 },
-        { label: 'Area 5', value: 4, count: 155 },
-        { label: 'Area 6', value: 5, count: 198 },
-        { label: 'Area 7', value: 6, count: 331 },
-      ],
+      cities: [],
       job_applications: [],
       perPage: 25,
       offset: 0,
@@ -190,7 +214,6 @@ export default {
       loading: false,
       selectedRowKeys: [],
       searchText: '',
-      keyword: '',
       columns: [{
         title: 'Title',
         dataIndex: 'title',
@@ -227,19 +250,31 @@ export default {
   },
 
   methods: {
+    moment,
+
     async handleInfiniteOnLoad() {
       const tempData = this.job_applications;
       this.loading = true;
 
-      let keyword = this.keyword;
-      let offset = (this.job_applications.length > 0 ) ? this.job_applications.length + this.perPage : 0;
+      const keyword = this.filters.keyword;
+      let offset = this.job_applications.length;
+
+      const time = this.filters.time;
+      const city = parseInt(this.filters.city);
+      const category = parseInt(this.filters.category);
+
       const apolloClient = this.$apollo.provider.defaultClient;
+
+      console.log(':::::::::::::: offset: ', offset);
 
       await apolloClient.query({
         query: JOB_APPLICATIONS_QUERY,
         variables: {
           offset,
-          keyword
+          keyword,
+          time,
+          jcat: category,
+          jcity: city,
         }
       }).then(({data}) => {
         this.loading = false;
@@ -250,59 +285,112 @@ export default {
           return
         }
 
-        /*let lastPrevElement = this.job_applications[this.job_applications.length - 1];
-        let newElement = data.allJobApplications[data.allJobApplications.length - 1];
-
-        if(lastPrevElement.id === newElement.id) {
-          return;
-        }
-        */
         this.job_applications = this.job_applications.concat(data.allJobApplications);
-        console.log(this.job_applications);
-        return data
+        return data;
       }).catch((err) => {
         this.loading = false;
         console.log("err: ", err);
       });
     },
 
-    /*async getCategoriesOrderByPosts() {
+    async getFilteredData() {
+      const keyword = this.filters.keyword;
+      let offset = 0;
+
+      // const offset = (this.job_applications.length > 0 ) ? this.job_applications.length + this.perPage : 0;
+      const time = this.filters.time;
+      const city = parseInt(this.filters.city);
+      const category = parseInt(this.filters.category);
+
       const apolloClient = this.$apollo.provider.defaultClient;
+
+      this.loading = true;
+
       await apolloClient.query({
-        query: JOB_CATEGORIES_ORDER_BY_POSTS_QUERY,
-        variables: {}
+        query: JOB_APPLICATIONS_QUERY,
+        variables: {
+          offset,
+          keyword,
+          time,
+          jcat: category,
+          jcity: city,
+        }
       }).then(({data}) => {
-        console.log('categories: ', data.allCategoriesOrderByPosts)
-        return data
+        this.loading = false;
+        if (data.allJobApplications.length > this.perPage) {
+          this.$message.warning('No more jobs to show!');
+          this.busy = true;
+          this.loading = false;
+          return
+        }
+
+        this.job_applications = data.allJobApplications;
+        return data;
       }).catch((err) => {
         this.loading = false;
         console.log("err: ", err);
       });
-    },*/
+    },
 
     sortMenuClick() {
       console.log('sort menu clicked');
     },
 
-    showOnlyTodayListings() {
-      console.log('showing only today\'s listings');
+    showOnlyTodayListings(e) {
+      const now = moment();
+      const jobs = [];
+
+      if(e.target.checked) {
+        this.filters.time = now;
+      } else {
+        this.filters.time = '';
+      }
+
+      this.getFilteredData();
     },
 
-    showByCategory(cat) {
-      console.log(cat);
+    async showByCategory(e, cat) {
+      if(e.target.checked) {
+        this.filters.category = parseInt(cat);
+      } else {
+        this.filters.category = '';
+      }
+      console.log(this.filters.category);
+      await this.getFilteredData();
     },
 
-    showByArea(area) {
-      console.log(area);
+    async showByCity(e) {
+      this.filters.city = parseInt(this.filterByCity);
+      console.log(this.filters.city);
+      await this.getFilteredData();
     },
 
-    onSearch() {
-      console.log('searched for');
+    async onSearch(e) {
+      if(this.filterByKeyword.length >= 2){
+        this.filters.keyword = this.filterByKeyword;
+      } else {
+        this.filters.keyword = '';
+      }
+      console.log('searched for: ', e);
+      await this.getFilteredData();
     },
 
     onSelectChange (selectedRowKeys) {
       console.log('selectedRowKeys changed: ', selectedRowKeys);
       this.selectedRowKeys = selectedRowKeys
+    },
+
+    async clearSearchFilters() {
+      console.log('...clearing filters');
+      this.filters.city = null;
+      this.filters.category = null;
+      this.filters.keyword = '';
+      this.filters.time = '';
+      this.filterByKeyword = '';
+      this.filterByCity = '';
+
+      await this.getFilteredData();
+      console.log(this.filters);
     }
   }
 }

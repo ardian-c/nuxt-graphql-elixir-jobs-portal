@@ -130,4 +130,12 @@ defmodule Api.Categories do
   def change_category(%Category{} = category) do
     Category.changeset(category, %{})
   end
+
+  def data() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  def query(queryable, _) do
+    queryable
+  end
 end

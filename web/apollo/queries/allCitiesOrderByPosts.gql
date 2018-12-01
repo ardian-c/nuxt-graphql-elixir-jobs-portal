@@ -1,7 +1,8 @@
 query allCitiesOrderByPosts {
    allCitiesOrderByPosts {
-      count_posts
      	id
      	name
+     	description
+      count_posts
    }
 }

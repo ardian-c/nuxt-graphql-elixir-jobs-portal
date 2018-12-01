@@ -17,11 +17,7 @@
           >
             <a-form-item
               hasFeedback
-              :validateStatus="validTitle"
               label="Title"
-              fieldDecoratorId="title"
-              :fieldDecoratorOptions="{rules: [
-                    { required: true, message: 'Please enter a title for job application.' }]}"
             >
               <a-input
                 type="text"
@@ -50,6 +46,21 @@
                 v-model="job_application.address"
                 ref="addressInput">
               </a-input>
+            </a-form-item>
+
+            <a-form-item
+              hasFeedback
+              label="City"
+            >
+              <a-select
+                v-model="job_application.city_id"
+                ref="cityInput">
+                <a-select-option
+                  v-for="(s, idx) in cities"
+
+                  :key="idx"
+                  :value="s.id">{{ s.description }}</a-select-option>
+              </a-select>
             </a-form-item>
 
             <a-form-item
@@ -97,9 +108,9 @@
                   label='Application will show until (date)'
                 >
                   <a-date-picker format="YYYY-MM-DD"
-                                 :disabledDate="disabledDate"
-                                 v-model="ends_date"
-                                 style="width: 90%" />
+                   :disabledDate="disabledDate"
+                   v-model="ends_date"
+                   style="width: 90%" />
                 </a-form-item>
               </a-col>
 
@@ -116,7 +127,7 @@
               </a-col>
             </a-row>
 
-            <a-row><a-switch
+            <!--<a-row><a-switch
               v-model="job_application.is_scheduled" /> Publish the job application later? Pick a publish time. </a-row>
 
             <a-row v-if="job_application.is_scheduled">
@@ -142,7 +153,7 @@
                 </a-form-item>
               </a-col>
             </a-row>
-            <br />
+            <br />-->
 
             <a-form-item
               label="Company"
@@ -162,11 +173,12 @@
               label="Categories"
             >
               <a-select
+                placeholder="Select categories"
                 mode="multiple"
                 labelInValue
                 :value="job_application.categories"
-                placeholder="Select categories"
                 :filterOption="false"
+                :defaultValue="['a1', 'b2']"
                 @search="findCategoryByNameOrDescription"
                 @change="handleCategoriesSelectChange"
                 :notFoundContent="fetching ? undefined : null"
@@ -207,7 +219,7 @@
 
             <a-form-item>
               <a-button type='primary' htmlType='submit' class='register-form-button'>
-                {{ (!job_application.is_scheduled) ? 'Publish' : 'Schedule for later posting' }}
+               Update Post
               </a-button>
             </a-form-item>
           </a-form>
@@ -227,6 +239,10 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { createLink } from "apollo-absinthe-upload-link";
 
 import SINGLE_JOB_APPLICATION_QUERY from '~/apollo/queries/singleJobApplication.gql';
+import SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY from '~/apollo/queries/singleCategoryByNameOrDescription.gql';
+import ALL_COMPANIES_QUERY from '~/apollo/queries/allCompaniesNoPagination.gql';
+import ALL_CATEGORIES_QUERY from '~/apollo/queries/allCategoriesNoPagination.gql';
+import ALL_CITIES_QUERY from  '~/apollo/queries/allCitiesNoPagination.gql';
 
 const client = new ApolloClient({
   link: createLink({
@@ -255,13 +271,62 @@ export default {
         return { id: this.$route.params.id }
       },
       result({ data }) {
-        console.log('data: ', data);
+        console.log('::: DATA ::: ', data);
+        var status = '';
+        var priority = '';
 
+        switch(data.singleJobApplication.priority){
+          case 1:
+            priority = 'lowest priority (1)';
+            break;
+
+          case 2:
+            priority = 'medium priority (2)';
+            break;
+
+          case 3:
+            priority = 'high priority (3)';
+            break;
+
+          default:
+            priority = 'lowest priority (1)';
+        }
+
+        switch(data.singleJobApplication.status) {
+          case 1:
+            status = 'publish';
+            break;
+
+          case 2:
+            status = 'draft';
+            break;
+
+          case 3:
+            status = 'trashed';
+            break;
+
+          default:
+            status = 'publish';
+        }
+
+        this.job_application = data.singleJobApplication;
+        this.job_application.priority = priority;
+        this.job_application.status = status;
+        this.job_application.company_id = this.job_application.company.id;
       }
     }
   },
 
+  mounted() {
+    // this.getCategories();
+    this.getCompanies();
+    this.getCities();
+  },
+
   data() {
+    this.lastFetchId = 0;
+    this.findCategoryByNameOrDescription = debounce(this.findCategoryByNameOrDescription, 800);
+
     return {
       submitting: false,
       errors: false,
@@ -292,6 +357,7 @@ export default {
       publish_time: moment(),
       statuses: ['publish', 'draft', 'trashed'],
       priorities: ['lowest priority (1)', 'medium priority (2)', 'high priority (3)'],
+      cities: [],
       companies: [],
       foundCategories: [],
       job_application: {
@@ -312,6 +378,137 @@ export default {
       documents: [],
       validTitle: '',
     }
+  },
+
+  methods: {
+    moment,
+
+    async findCategoryByNameOrDescription(value) {
+      if(value.length < 2) { return; }
+      this.lastFetchId += 1;
+      const fetchId = this.lastFetchId;
+      this.foundCategories = [];
+      this.fetching = true;
+      const apolloClient = this.$apollo.provider.defaultClient;
+      const category = await apolloClient.query({
+        query: SINGLE_CATEGORY_BY_NAME_OR_DESCRIPTION_QUERY,
+        variables: {
+          keyword: value
+        }
+      }).then(({ data }) => {
+        if (fetchId !== this.lastFetchId) { // for fetch callback order
+          return;
+        }
+
+        data.singleCategoryByNameOrDescription.forEach((data, idx) => {
+          this.foundCategories.push({
+            text: data.name,
+            value: data.id
+          });
+        });
+
+        console.log("::: CATEGORIES ::: ", this.foundCategories);
+
+        this.fetching = false;
+      }).catch((err) => {
+        this.fetching = false;
+      });
+    },
+
+    async getCompanies() {
+      const apolloClient = this.$apollo.provider.defaultClient;
+      const companies = await apolloClient.query({
+        query: ALL_COMPANIES_QUERY,
+        variables: {}
+      }).then(({ data}) => {
+        this.companies = data.allCompaniesNoPagination;
+      }).catch((err) => {
+        console.log('err: ', err);
+      });
+    },
+
+    async getCities() {
+      const apolloClient = this.$apollo.provider.defaultClient;
+      const cities = await apolloClient.query({
+        query: ALL_CITIES_QUERY,
+        variables: {}
+      }).then(({ data}) => {
+        this.cities = data.allCitiesNoPagination;
+      }).catch((err) => {
+        console.log('err: ', err);
+      });
+    },
+
+    async getCategories() {
+      const apolloClient = this.$apollo.provider.defaultClient;
+      const categories = await apolloClient.query({
+        query: ALL_CATEGORIES_QUERY,
+        variables: {}
+      }).then(({data}) => {
+        this.job_application.categories = data.allCategoriesNoPagination;
+        console.log("::: CATEGORIES ::: ", this.job_application.categories);
+      }).catch((err) => {
+        console.log('err: ', err);
+      });
+    },
+
+    onEditorBlur(editor) {
+      // console.log('editor blur!', editor)
+    },
+    onEditorFocus(editor) {
+      // console.log('editor focus!', editor)
+    },
+    onEditorReady(editor) {
+      // console.log('editor ready!', editor)
+    },
+    onEditorChange({ editor, html, text }) {
+      // console.log('editor change!', editor, html, text)
+      this.job_application.content = html
+    },
+
+    handleChange(info) {
+      if (info.file.status === 'done') {
+        // console.log(info.file);
+        this.documents.push(info.file.originFileObj);
+      }
+    },
+
+    handleTimepickerChange(time, timeString) {
+      // console.log(this.job_application.published_at);
+      // console.log('time string: ', timeString);
+    },
+
+    handleCategoriesSelectChange(value) {
+      let tmp = {};
+      tmp.id = value.key;
+      tmp.name = value.label;
+
+      Object.assign(this, {
+        foundCategories: [],
+        fetching: false,
+      });
+
+      Object.assign(this.job_application, {
+        categories: value
+      });
+    },
+
+    filterCompanyOptions(input, option) {
+      return option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0
+    },
+
+    disabledDate(current) {
+      // Can not select days before today and today
+      return current && current <= moment().endOf('day');
+    },
+
+    handleRemoveFile(file) {
+      this.documents.forEach((f, idx) => {
+        if(f.uid == file.uid) {
+          this.documents.splice(idx, 1);
+        }
+      });
+    },
   }
 }
 </script>

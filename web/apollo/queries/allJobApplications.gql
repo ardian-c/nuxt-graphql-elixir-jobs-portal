@@ -1,12 +1,29 @@
-#import "~/apollo/fragments/jobApplicationPreview.gql"
-query allJobApplications($offset: Int, $keyword: String) {
+query allJobApplications(
+  $offset: Int,
+  $keyword: String,
+  $time: String,
+  $jcat: Int,
+  $jcity: Int) {
   countJobApplications
-  allJobApplications(offset: $offset, keyword: $keyword) {
+  allJobApplications(
+    offset: $offset,
+    keyword: $keyword,
+    time: $time,
+    jcat: $jcat,
+    jcity: $jcity) {
     id
     title
+    content
     slug
-    company {
+    categories {
+      id
       name
     }
+    company {
+      id
+      name
+    }
+    insertedAt
+    updatedAt
   }
 }

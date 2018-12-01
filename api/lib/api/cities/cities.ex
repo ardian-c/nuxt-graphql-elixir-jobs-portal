@@ -8,6 +8,24 @@ defmodule Api.Cities do
 
   alias Api.Cities.City
 
+  def with_posts_count(query, nil), do: query
+
+  def with_posts_count(query) do
+    from(
+      j in "job_applications",
+      join: c in "cities", on: j.city_id == c.id,
+      group_by: [j.city_id, c.name, c.description],
+      order_by: [desc: count(j.id)],
+      select: %{
+        id: j.city_id,
+        name: c.name,
+        description: c.description,
+        count_posts: count(j.id)
+      },
+      limit: 10
+    )
+  end
+
   @doc """
   Returns the list of cities.
 

@@ -1,4 +1,7 @@
 defmodule Api.Companies do
+  import Ecto.Query, warn: false
+  import Ecto.Changeset, only: [put_assoc: 3]
+
   @moduledoc """
   The Companies context.
   """

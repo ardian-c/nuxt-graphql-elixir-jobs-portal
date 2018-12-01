@@ -97,21 +97,52 @@ defmodule ApiWeb.Schema do
       resolve &Resolvers.Categories.get_by_id/3
     end
 
+    # cities
+    @desc "Get all cities"
+    field :all_cities_no_pagination, list_of(:city) do
+      resolve &Resolvers.Cities.get_all_cities_no_pagination/3
+    end
+
+    @desc "Get all cities - order by posts"
+    field :all_cities_order_by_posts, list_of(:city_with_posts) do
+      resolve &Resolvers.Cities.get_all_cities_order_by_posts/3
+    end
+
     # job applications
     @desc "Get all job applications"
-    field :all_job_applications, list_of(:job_application_preview) do
+    field :all_job_applications, list_of(:job_application) do
       arg :offset, :integer, default_value: 0
       arg :keyword, :string, default_value: nil
+      arg :time, :string, default_value: nil
+      arg :jcat, :integer, default_value: nil
+      arg :jcity, :integer, default_value: nil
 
       resolve &Resolvers.JobApplications.get_all_job_applications/3
     end
 
-    @desc "Get all job applications with filters"
-    field :get_all_job_applications_filtered, list_of(:job_application) do
-      arg :offset, :integer, default_value: 0
-      arg :keyword, :string, default_value: nil
+#    @desc "Get all job applications with filters"
+#    field :get_all_job_applications_filtered, list_of(:job_application) do
+#      arg :offset, :integer, default_value: 0
+#      arg :keyword, :string, default_value: nil
+#      arg :time, :string, default_value: nil
+#      arg :category, :integer, default_value: nil
+#      arg :city, :integer, default_value: nil
+#
+#      resolve &Resolvers.JobApplications.get_all_job_applications_filtered/3
+#    end
 
-      resolve &Resolvers.JobApplications.get_all_job_applications_filtered/3
+    @desc "Get single job application"
+    field :single_job_application, :job_application do
+      arg :id, non_null(:id)
+
+      resolve &Resolvers.JobApplications.get_by_id/3
+    end
+
+    @desc "Get single job application"
+    field :single_job_application_by_slug, :job_application do
+      arg :slug, non_null(:string)
+
+      resolve &Resolvers.JobApplications.get_by_slug/3
     end
 
     @desc "Count of all job applications"
@@ -210,9 +241,11 @@ defmodule ApiWeb.Schema do
 
   def dataloader() do
     alias Api.Companies
+    alias Api.Categories
 
     Dataloader.new()
     |> Dataloader.add_source(Companies, Companies.data())
+    |> Dataloader.add_source(Categories, Categories.data())
   end
 
   def context(ctx) do

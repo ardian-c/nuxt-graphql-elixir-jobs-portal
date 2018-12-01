@@ -40,12 +40,41 @@ defmodule Api.JobApplications do
   @doc """
     Search for job applications by title
   """
-  def search(query, keyword) do
-    from(
-      r in query,
-      where: ilike(r.title, ^"%#{keyword}%"),
-      order_by: [desc: :inserted_at]
-    )
+  def search(query, keyword, category, city) do
+    if not is_nil(category) && not is_nil(city) do
+      from(
+        r in query,
+        join: c in "job_application_categories", on: c.job_application_id == r.id,
+        where: c.category_id == ^category,
+        where: r.city_id == ^city,
+        where: ilike(r.title, ^"%#{keyword}%"),
+        order_by: [desc: :inserted_at]
+      )
+      else if not is_nil(category) && is_nil(city) do
+        from(
+          r in query,
+          join: c in "job_application_categories", on: c.job_application_id == r.id,
+          where: c.category_id == ^category,
+          where: ilike(r.title, ^"%#{keyword}%"),
+          order_by: [desc: :inserted_at]
+        )
+        else if is_nil(category) && not is_nil(city) do
+          from(
+            r in query,
+            join: c in "job_application_categories", on: c.job_application_id == r.id,
+            where: r.city_id == ^city,
+            where: ilike(r.title, ^"%#{keyword}%"),
+            order_by: [desc: :inserted_at]
+          )
+          else
+           from(
+             r in query,
+             where: ilike(r.title, ^"%#{keyword}%"),
+             order_by: [desc: :inserted_at]
+           )
+        end
+      end
+    end
   end
 
   @doc """

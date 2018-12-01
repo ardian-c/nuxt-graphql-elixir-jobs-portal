@@ -12,6 +12,12 @@ fragment jobApplication on JobApplication {
   endsAt
 	publishedAt
 	publishedTimezone
-	# ...company
-	# ...category
+	company {
+	  id
+	  name
+	}
+	categories {
+	  id
+	  name
+	}
 }

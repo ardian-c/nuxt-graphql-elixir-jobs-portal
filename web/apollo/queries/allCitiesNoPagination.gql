@@ -1,0 +1,6 @@
+#import "~/apollo/fragments/city.gql"
+query allCitiesNoPagination {
+  allCitiesNoPagination {
+    ...city
+  }
+}

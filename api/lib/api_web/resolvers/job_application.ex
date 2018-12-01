@@ -13,15 +13,24 @@ defmodule ApiWeb.Resolvers.JobApplications do
   @doc """
     Get all job applications
   """
-  def get_all_job_applications(_, %{ keyword: keyword, offset: offset }, _) do
+  def get_all_job_applications(_, params , _) do
     job_applications = JobApplication
-        |> JobApplications.search(keyword)
-        |> Repo.paginate(offset)
-        |> Repo.all()
-    {:ok, job_applications}
+       |> JobApplications.search(params[:keyword], params[:jcat], params[:jcity])
+       |> Repo.paginate(params[:offset])
+       |> Repo.all()
+   {:ok, job_applications}
   end
 
-  def get_all_job_applications_filtered(_, %{ offset: offset, keyword: keyword }, _) do
+  @doc """
+    Get all applications filtered
+  """
+  def get_all_job_applications_filtered(_, %{
+    offset: offset,
+    keyword: keyword,
+    time: time,
+    category: category,
+    city: city
+  }, _) do
     job_applications = JobApplication
       |> JobApplications.search(keyword)
       |> Repo.paginate(50)
@@ -29,6 +38,29 @@ defmodule ApiWeb.Resolvers.JobApplications do
     {:ok, job_applications}
   end
 
+  @doc """
+    Get a single job application
+  """
+  def get_by_slug(_, %{ slug: slug }, _) do
+    case Repo.get_by!(JobApplication, slug: slug) do
+      job_application ->
+        {:ok, job_application}
+      nil ->
+        {:error, "Something went wrong, no such job application"}
+    end
+  end
+
+  @doc """
+    Get a single job application
+  """
+  def get_by_id(_, %{ id: id }, _) do
+    case Repo.get_by!(JobApplication, id: id) do
+      job_application ->
+        {:ok, job_application}
+      nil ->
+        {:error, "Something went wrong, no such job application"}
+    end
+  end
 
   @doc """
     Add new job application

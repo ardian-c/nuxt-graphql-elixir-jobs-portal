@@ -8,6 +8,8 @@ defmodule Api.Cities.City do
     field :description, :string
 
     timestamps()
+
+    has_many :job_applications, Api.JobApplications.JobApplication
   end
 
   @doc false
