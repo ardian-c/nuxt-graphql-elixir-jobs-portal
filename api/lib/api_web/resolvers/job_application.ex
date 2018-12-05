@@ -21,27 +21,37 @@ defmodule ApiWeb.Resolvers.JobApplications do
    {:ok, job_applications}
   end
 
-  @doc """
-    Get all applications filtered
-  """
-  def get_all_job_applications_filtered(_, %{
-    offset: offset,
-    keyword: keyword,
-    time: time,
-    category: category,
-    city: city
-  }, _) do
-    job_applications = JobApplication
-      |> JobApplications.search(keyword)
-      |> Repo.paginate(50)
-      |> Repo.all()
-    {:ok, job_applications}
-  end
+#  @doc """
+#    Get all applications filtered
+#  """
+#  def get_all_job_applications_filtered(_, %{
+#    offset: offset,
+#    keyword: keyword,
+#    time: time,
+#    category: category,
+#    city: city
+#  }, _) do
+#    job_applications = JobApplication
+#      |> JobApplications.search(keyword)
+#      |> Repo.paginate(50)
+#      |> Repo.all()
+#    {:ok, job_applications}
+#  end
 
   @doc """
     Get a single job application
   """
   def get_by_slug(_, %{ slug: slug }, _) do
+    job_application = JobApplication
+      |> JobApplications.search_by_slug(slug)
+      |> Repo.all();
+    {:ok, job_application}
+  end
+
+  @doc """
+    Get a single job application
+  """
+  def get_by_slug_new(_, %{ slug: slug }, _) do
     case Repo.get_by!(JobApplication, slug: slug) do
       job_application ->
         {:ok, job_application}

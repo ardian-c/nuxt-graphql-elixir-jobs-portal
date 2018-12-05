@@ -49,7 +49,8 @@ Api.Repo.insert_all(
 	[name: "shendetesi", description: "Shëndetësi", inserted_at: now, updated_at: now],
 	[name: "sigurim", description: "Sigurim", inserted_at: now, updated_at: now],
 	[name: "vozites", description: "Vozitës", inserted_at: now, updated_at: now],
-	[name: "media", description: "Media", inserted_at: now, updated_at: now]
+	[name: "media", description: "Media", inserted_at: now, updated_at: now],
+	[name: "tjera", description: "Të tjera", inserted_at: now, updated_at: now],
 	]
 )
 

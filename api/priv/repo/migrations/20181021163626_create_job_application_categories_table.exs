@@ -7,6 +7,6 @@ defmodule Api.Repo.Migrations.CreateJobApplicationCategoriesTable do
       add :category_id, references(:categories, column: "id", type: :id)
     end
 
-    create index(:job_application_categories, [:job_application_id, :category_id], unique: true)
+    create index(:job_application_categories, [:job_application_id, :category_id])
   end
 end

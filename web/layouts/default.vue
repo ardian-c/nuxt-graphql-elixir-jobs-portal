@@ -1,7 +1,10 @@
 <template>
   <section class="main-wrapper f-wrapper">
     <navbar></navbar>
-    <nuxt/>
+    <div class="main-content">
+      <nuxt/>
+    </div>
+    <main-footer></main-footer>
   </section>
 </template>
 
@@ -9,13 +12,15 @@
   import Vue from 'vue'
   import Antd from 'ant-design-vue'
 
-  import Navbar from '~/components/homepage/navbar'
+  import MainFooter from '~/components/homepage/mainfooter';
+  import Navbar from '~/components/homepage/navbar';
 
   Vue.use(Antd)
 
   export default {
     components: {
-      Navbar
+      Navbar,
+      MainFooter
     }
   }
 </script>
@@ -35,6 +40,16 @@ html {
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.single-job-container {
+  min-height: 650px;
+}
+
+.job-content {
+  margin: 30px 0;
+  height: auto;
+  min-height: 1000px;
 }
 </style>
 

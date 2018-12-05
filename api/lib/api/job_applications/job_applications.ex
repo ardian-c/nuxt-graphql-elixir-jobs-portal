@@ -77,6 +77,18 @@ defmodule Api.JobApplications do
     end
   end
 
+  @doc"""
+    Search for job application by slug
+  """
+  def search_by_slug(query, slug) do
+    from(
+      r in query,
+      where: ilike(r.slug, ^"%#{slug}%"),
+      order_by: [desc: :inserted_at],
+      limit: 1
+    )
+  end
+
   @doc """
   Creates a job_application.
 

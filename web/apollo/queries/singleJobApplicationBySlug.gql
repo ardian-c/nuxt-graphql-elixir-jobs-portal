@@ -1,6 +1,18 @@
-#import "~/apollo/fragments/jobApplication.gql"
 query singleJobApplicationBySlug($slug: String!) {
   singleJobApplicationBySlug(slug: $slug) {
-    ...jobApplication
+    id
+    title
+    content
+    slug
+    categories {
+      id
+      name
+    }
+    company {
+      id
+      name
+    }
+    insertedAt
+    updatedAt
   }
 }

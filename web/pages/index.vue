@@ -28,10 +28,10 @@
 
           <a-col :span="8">
             <a-row type="flex" justify="center">
-              <a-button-group>
-                <a-button icon="bars" />
-                <a-button icon="appstore-o" />
-              </a-button-group>
+              <!--<a-button-group>-->
+                <!--<a-button icon="bars" />-->
+                <!--<a-button icon="appstore-o" />-->
+              <!--</a-button-group>-->
             </a-row>
           </a-col>
 
@@ -39,10 +39,10 @@
             <a-row type="flex" justify="end">
               <a-dropdown>
                 <a-menu slot="overlay" @click="sortMenuClick">
-                  <a-menu-item key="1"><a-icon type="line-chart" />Most Relevant</a-menu-item>
-                  <a-menu-item key="2"><a-icon type="calendar" />Published</a-menu-item>
-                  <a-menu-item key="3"><a-icon type="team" />Employer</a-menu-item>
-                  <a-menu-item key="4"><a-icon type="environment-o" />Place</a-menu-item>
+                  <a-menu-item key="1"><a-icon type="calendar" />Published</a-menu-item>
+                  <a-menu-item key="2"><a-icon type="line-chart" />Alphabetically</a-menu-item>
+                  <!--<a-menu-item key="3"><a-icon type="team" />Employer</a-menu-item>-->
+                  <!--<a-menu-item key="4"><a-icon type="environment-o" />Place</a-menu-item>-->
                 </a-menu>
                 <a-button style="margin-left: 8px">
                   Sort On <a-icon type="down" />
@@ -104,7 +104,7 @@
         </a-col>-->
 
         <a-col :span="18">
-          <a-list>
+          <a-list v-if="job_applications.length > 0">
             <virtual-scroller
               style="height:850px"
               :items="job_applications"
@@ -125,6 +125,7 @@
             </virtual-scroller>
             <a-spin v-if="loading"  class="jobs-loading" />
           </a-list>
+          <p v-else>There are no posts.</p>
         </a-col>
       </div>
     </div>
@@ -190,6 +191,8 @@ export default {
     return {
       busy: false,
       total: 0,
+      sortDesc: true,
+      sortDescAlpha: true,
       current: ['home'],
       radioStyle: {
         display: 'block',
@@ -332,8 +335,56 @@ export default {
       });
     },
 
-    sortMenuClick() {
-      console.log('sort menu clicked');
+    sortMenuClick(e) {
+      if(e.key == "1") {
+        // sort by published at
+        if(!this.sortDesc) {
+          this.job_applications = this.job_applications.sort(function(a, b)  {
+            var key1 = new Date(a.insertedAt);
+            var key2 = new Date(b.insertedAt);
+
+            if (key1 < key2) {
+              return -1;
+            } else if (key1 == key2) {
+              return 0;
+            } else {
+              return 1;
+            }
+          });
+          this.sortDesc = true;
+        } else {
+          this.job_applications = this.job_applications.sort(function(a, b)  {
+            var key1 = new Date(a.insertedAt);
+            var key2 = new Date(b.insertedAt);
+
+            if (key1 > key2) {
+              return -1;
+            } else if (key1 == key2) {
+              return 0;
+            } else {
+              return 1;
+            }
+          });
+          this.sortDesc = false;
+        }
+      } else if(e.key == "2") {
+        // sort alphabetically
+        if(this.sortDescAlpha) {
+          this.job_applications = this.job_applications.sort(function(a,b) {
+            if(a.title < b.title) { return -1; }
+            if(a.title > b.title) { return 1; }
+            return 0;
+          });
+          this.sortDescAlpha = false;
+        } else {
+          this.job_applications = this.job_applications.sort(function(a,b) {
+            if(a.title > b.title) { return -1; }
+            if(a.title < b.title) { return 1; }
+            return 0;
+          });
+          this.sortDescAlpha = true;
+        }
+      }
     },
 
     showOnlyTodayListings(e) {

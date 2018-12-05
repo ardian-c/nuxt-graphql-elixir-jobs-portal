@@ -142,7 +142,7 @@ defmodule ApiWeb.Schema do
     field :single_job_application_by_slug, :job_application do
       arg :slug, non_null(:string)
 
-      resolve &Resolvers.JobApplications.get_by_slug/3
+      resolve &Resolvers.JobApplications.get_by_slug_new/3
     end
 
     @desc "Count of all job applications"

@@ -14,23 +14,23 @@
               v-model="current"
               mode="horizontal"
             >
-              <a-menu-item key="home">
-                <nuxt-link to="/"><a-icon type="home" /> Home</nuxt-link>
-              </a-menu-item>
+              <!--<a-menu-item key="home">-->
+                <!--<nuxt-link to="/"><a-icon type="home" /> Home</nuxt-link>-->
+              <!--</a-menu-item>-->
 
-              <a-menu-item key="jobs">
-                <nuxt-link to="/">
-                  <a-icon type="notification" /> Jobs
-                </nuxt-link>
-              </a-menu-item>
+              <!--<a-menu-item key="jobs">-->
+                <!--<nuxt-link to="/">-->
+                  <!--<a-icon type="notification" /> Jobs-->
+                <!--</nuxt-link>-->
+              <!--</a-menu-item>-->
 
               <!--<a-menu-item key="about">
                 <a-icon type="compass" /> About Us
               </a-menu-item>-->
 
-              <a-menu-item key="contact">
-                <nuxt-link to="/contact"><a-icon type="compass" /> Contact</nuxt-link>
-              </a-menu-item>
+              <!--<a-menu-item key="contact">-->
+                <!--<nuxt-link to="/contact"><a-icon type="compass" /> Post a Job </nuxt-link>-->
+              <!--</a-menu-item>-->
             </a-menu>
           </a-row>
         </a-col>
@@ -38,8 +38,9 @@
         <a-col :span="6">
           <a-row type="flex" justify="end">
             <a-menu class="header-menu-btns" mode="horizontal">
-              <nuxt-link v-if="!isAuthenticated" to="/login"><a-button icon="unlock">Login</a-button></nuxt-link>&nbsp;
-              <nuxt-link v-if="!isAuthenticated" to="/register"><a-button icon="lock">Register</a-button></nuxt-link>
+              <nuxt-link v-if="isAuthenticated" to="/login"><a-button icon="compass">Post a Job</a-button></nuxt-link>&nbsp;
+              <!--<nuxt-link v-if="!isAuthenticated" to="/login"><a-button icon="unlock">Login</a-button></nuxt-link>&nbsp;-->
+              <!--<nuxt-link v-if="!isAuthenticated" to="/register"><a-button icon="lock">Register</a-button></nuxt-link>-->
 
               <nuxt-link v-if="isAuthenticated" to="/backend/admin/dashboard"><a-button icon="home">Dashboard</a-button></nuxt-link>
             </a-menu>

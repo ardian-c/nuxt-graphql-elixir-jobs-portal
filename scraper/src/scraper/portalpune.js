@@ -57,9 +57,14 @@ Apify.main(async () => {
 
       // Extract data from the page using cheerio.
       const title = $("h2.vacancyTitle").text();
-      const category = $("#personAndDates > dl:nth-child(3) > p").text();
+      let category = $("#personAndDates > dl:nth-child(3) > p").text();
       const company = $("#vacancySummary > #defLists > dl:nth-child(1) > p").text();
       let content = '';
+
+      var list_cats = category.split('|');
+      list_cats = list_cats.filter(n => n);
+
+      category = list_cats[0].replace(/[.,|]/g, '').trim();
       
       if (hasPdfLink) {
         content = `<p>Kliko në <a href="https://www.portalpune.com/${$(".pDescription > p")
@@ -109,7 +114,7 @@ Apify.main(async () => {
           const insertedAt = moment().format('YYYY-MM-DD HH:mm:ss');
           const updatedAt = moment().format("YYYY-MM-DD HH:mm:ss");
 
-          let categoryId = 1;
+          let categoryId = 23;
 
           const jobApplicationExists = await client.query(lastInsertQuery, [request.url]);
 
@@ -117,23 +122,41 @@ Apify.main(async () => {
             // url already exists
             return;
           } else {
-            if (category !== '' && category.length <= 50) {
-              const categoryExistsQuery = "SELECT id FROM categories WHERE name=$1";
+              if (category !== '' && category.length <= 50) {
+                  // const categoryExistsQuery = "SELECT id FROM categories WHERE name=$1";
+                  const categoryExistsQuery = "SELECT similarity(description, $1) as sim,id, description FROM categories ORDER BY sim DESC LIMIT 1";
 
-              const categoryExists = await client.query(categoryExistsQuery, [category.toLowerCase()]);
+                  const categoryExists = await client.query(categoryExistsQuery, [category.toLowerCase()]);
 
-              if (categoryExists.rowCount == 1) {
-                categoryId = categoryExists.rows[0].id;
-              } else {
-                const insertCategoryQuery = "INSERT INTO categories(name, description, inserted_at, updated_at) VALUES($1, $2, $3, $4) RETURNING *;";
-                const insertedCategory = await client.query(
-                  insertCategoryQuery,
-                  [category.toLowerCase(), "", insertedAt, updatedAt]
-                );
+                  if (categoryExists.rowCount > 0) {
+                      if(categoryExists.rows[0].hasOwnProperty('sim') && categoryExists.rows[0].sim >= 0.3) {
+                          categoryId = categoryExists.rows[0].id;
+                      }
+                  } else {
+                      const insertCategoryQuery = "INSERT INTO categories(name, description, inserted_at, updated_at) VALUES($1, $2, $3, $4) RETURNING *;";
+                      const insertedCategory = await client.query(
+                          insertCategoryQuery,
+                          [category.toLowerCase(), category, insertedAt, updatedAt]
+                      );
 
-                categoryId = insertedCategory.rows[0].id;
+                      categoryId = insertedCategory.rows[0].id;
+                  }
               }
-            }
+
+              let cityId = 17;
+              // check if city exists
+              const cityExistsQuery = 'SELECT similarity(description, $1) as sim, id FROM cities ORDER BY sim DESC LIMIT 1';
+              const cityExists = await client.query(cityExistsQuery, [location]);
+
+              if(cityExists.rows[0] === 'undefined') {
+                  const insertCityQuery = "INSERT INTO cities(name, description, inserted_at, updated_at) VALUES($1,$2,$3,$4) RETURNING *;";
+                  const insertedCity = await client.query(insertCityQuery, [city.toLowerCase(), city, insertedAt, updatedAt]);
+                  cityId = insertedCity.rows[0].id;
+              } else if(cityExists.rows[0].sim >= 0.5) {
+                  cityId = cityExists.rows[0].id;
+              } else {
+                  cityId = 17;
+              }
 
             // check if company exists, if not create one
             const companyExistsQuery = 'SELECT * FROM companies WHERE name=$1';
@@ -141,12 +164,9 @@ Apify.main(async () => {
 
             const companyExists = await client.query(companyExistsQuery, [company]);
 
-            console.log(colors.green('existing company: ', companyExists.rows[0]));
-
             if (typeof companyExists.rows[0] === 'undefined') {
               if (company.length <= 50) {
                 // check if company exists, if not create
-                console.log(colors.white("company inserted ", company));
                 const insertCompaniesQuery = "INSERT INTO companies(name, address, inserted_at, updated_at) VALUES ($1, $2, $3, $4) RETURNING *;";
 
                 const insertedCompany = await client.query(
@@ -159,8 +179,8 @@ Apify.main(async () => {
               companyId = companyExists.rows[0].id;
             }
 
-            const insertJobApplicationQuery = "INSERT INTO job_applications(title,content,slug,address,status,priority,source,ends_at, inserted_at, updated_at, company_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *;";
-            const jobApplicationValues = [title, content, slug, location, 3, 1, request.url, parsedDeadline, insertedAt, updatedAt, companyId];
+            const insertJobApplicationQuery = "INSERT INTO job_applications(title,content,slug,address,status,priority,source,ends_at, inserted_at, updated_at, company_id, city_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *;";
+            const jobApplicationValues = [title, content, slug, location, 3, 1, request.url, parsedDeadline, insertedAt, updatedAt, companyId, cityId];
 
             const insertedJobApplication = await client.query(insertJobApplicationQuery, jobApplicationValues);
 
@@ -170,6 +190,8 @@ Apify.main(async () => {
             const addRelationValues = [jobApplicationId, categoryId];
 
             await client.query(addRelationQuery, addRelationValues);
+            console.log(':::::::::::::::::::::::::::: ', jobApplicationId);
+            console.log('============================ ', categoryId);
             console.log(colors.yellow("saved to db 🔥👌"));
 
             await client.query("commit");
