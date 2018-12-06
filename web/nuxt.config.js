@@ -26,6 +26,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/apollo',
+    '@nuxtjs/dotenv',
   ],
 
   axios: {},
